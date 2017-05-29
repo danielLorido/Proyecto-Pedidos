@@ -77,12 +77,12 @@ public class PanelCliente extends JPanel {
 		gbc_tabCli.gridy = 2;
 		panel.add(tabCli, gbc_tabCli);
 		
-		JLabel lblEspacio01 = new JLabel(" ");
-		GridBagConstraints gbc_lblEspacio01 = new GridBagConstraints();
-		gbc_lblEspacio01.insets = new Insets(0, 0, 5, 5);
-		gbc_lblEspacio01.gridx = 1;
-		gbc_lblEspacio01.gridy = 3;
-		panel.add(lblEspacio01, gbc_lblEspacio01);
+		JLabel lblEspacioCli01 = new JLabel(" ");
+		GridBagConstraints gbc_lblEspacioCli01 = new GridBagConstraints();
+		gbc_lblEspacioCli01.insets = new Insets(0, 0, 5, 5);
+		gbc_lblEspacioCli01.gridx = 1;
+		gbc_lblEspacioCli01.gridy = 3;
+		panel.add(lblEspacioCli01, gbc_lblEspacioCli01);
 		
 		txtOpcionalesCli = new JTextField();
 		txtOpcionalesCli.setEditable(false);
@@ -94,12 +94,12 @@ public class PanelCliente extends JPanel {
 		gbc_txtOpcionalesCli.gridy = 4;
 		panel.add(txtOpcionalesCli, gbc_txtOpcionalesCli);
 		
-		JLabel lblEspacio02 = new JLabel(" ");
-		GridBagConstraints gbc_lblEspacio02 = new GridBagConstraints();
-		gbc_lblEspacio02.insets = new Insets(0, 0, 0, 5);
-		gbc_lblEspacio02.gridx = 1;
-		gbc_lblEspacio02.gridy = 5;
-		panel.add(lblEspacio02, gbc_lblEspacio02);
+		JLabel lblEspacioCli02 = new JLabel(" ");
+		GridBagConstraints gbc_lblEspacioCli02 = new GridBagConstraints();
+		gbc_lblEspacioCli02.insets = new Insets(0, 0, 0, 5);
+		gbc_lblEspacioCli02.gridx = 1;
+		gbc_lblEspacioCli02.gridy = 5;
+		panel.add(lblEspacioCli02, gbc_lblEspacioCli02);
 
 	}
 
