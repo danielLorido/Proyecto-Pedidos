@@ -3,7 +3,7 @@ package control;
 import java.awt.EventQueue;
 
 
-public class Principal extends ParaPedidosUI{
+public class Principal extends ParaPedidosUIAntiguo{
 
 	/**
 	 * Launch the application.

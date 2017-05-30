@@ -1,9 +1,7 @@
 package control;
 
-import vista.PanelArticulo;
-import vista.PanelCliente;
-import vista.PanelPedidos;
 import vista.PedidosUI;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
