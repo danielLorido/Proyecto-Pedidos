@@ -11,6 +11,8 @@ public class ParaPedidosUI extends PedidosUI {
 			public void actionPerformed(ActionEvent e) {
 				pnlPrincipal.show(false);
 				pnlClientes.show();
+				// Debería ser algo así
+				// contentPane.getLayout().show();
 			}
 		});
 	}
