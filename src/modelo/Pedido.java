@@ -11,7 +11,7 @@ public class Pedido implements Serializable {
 	private HashSet<LineaPedido> listaArticulos;
 	private float precioTotal = 0;
 
-	public Pedido(Date fecha, Cliente cliente, HashSet<LineaPedido> listaArticulos, float precioTotal) {
+	public Pedido(Cliente cliente, HashSet<LineaPedido> listaArticulos, float precioTotal, Date fechaPedido) {
 		super();
 		// TODO: establecer una fecha al pedido
 		this.fechaPedido = fechaPedido;
