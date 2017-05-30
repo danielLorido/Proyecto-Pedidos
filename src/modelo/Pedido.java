@@ -66,5 +66,4 @@ public class Pedido implements Serializable {
 		// TODO Auto-generated method stub
 		return super.toString();
 	}
-
 }
