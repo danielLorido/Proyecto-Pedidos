@@ -1,4 +1,4 @@
-package control;
+package control.comportamiento;
 
 import vista.PanelArticulo;
 import vista.PanelCliente;

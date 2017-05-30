@@ -1,4 +1,4 @@
-package control;
+package control.comportamiento;
 
 import java.awt.EventQueue;
 
