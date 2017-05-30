@@ -5,6 +5,7 @@ import vista.PanelCliente;
 import vista.PanelPedidos;
 import vista.PedidosUI;
 import java.awt.event.ActionListener;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 
 public class ParaPedidosUI extends PedidosUI {
@@ -13,7 +14,7 @@ public class ParaPedidosUI extends PedidosUI {
 		// Probando como cambiar de panel
 		btnCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pnlPrincipal.show(false);
+//				((CardLayout)(contentPane.getLayout())).show(pnlClientes, "");
 				pnlClientes.show();
 				// Debería ser algo así
 				// contentPane.getLayout().show();
