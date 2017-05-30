@@ -10,7 +10,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
 public class PanelArticulo extends JPanel {
-	private JTextField txtOpcionalesArt;
+	private JTextField txtOpcionales;
 
 	/**
 	 * Create the panel.
@@ -36,43 +36,43 @@ public class PanelArticulo extends JPanel {
 		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
 		
-		JLabel lblEspacioArtArri = new JLabel(" ");
-		GridBagConstraints gbc_lblEspacioArtArri = new GridBagConstraints();
-		gbc_lblEspacioArtArri.insets = new Insets(0, 0, 5, 5);
-		gbc_lblEspacioArtArri.gridx = 2;
-		gbc_lblEspacioArtArri.gridy = 0;
-		panel.add(lblEspacioArtArri, gbc_lblEspacioArtArri);
+		JLabel lblEspacioArri = new JLabel(" ");
+		GridBagConstraints gbc_lblEspacioArri = new GridBagConstraints();
+		gbc_lblEspacioArri.insets = new Insets(0, 0, 5, 5);
+		gbc_lblEspacioArri.gridx = 2;
+		gbc_lblEspacioArri.gridy = 0;
+		panel.add(lblEspacioArri, gbc_lblEspacioArri);
 		
-		JButton btnInicioArt = new JButton("<- Inicio");
-		GridBagConstraints gbc_btnInicioArt = new GridBagConstraints();
-		gbc_btnInicioArt.gridheight = 2;
-		gbc_btnInicioArt.insets = new Insets(0, 0, 5, 5);
-		gbc_btnInicioArt.gridx = 1;
-		gbc_btnInicioArt.gridy = 1;
-		panel.add(btnInicioArt, gbc_btnInicioArt);
+		JButton btnInicio = new JButton("<- Inicio");
+		GridBagConstraints gbc_btnInicio = new GridBagConstraints();
+		gbc_btnInicio.gridheight = 2;
+		gbc_btnInicio.insets = new Insets(0, 0, 5, 5);
+		gbc_btnInicio.gridx = 1;
+		gbc_btnInicio.gridy = 1;
+		panel.add(btnInicio, gbc_btnInicio);
 		
-		JLabel lblSecArt = new JLabel("Secci\u00F3n Articulos");
-		GridBagConstraints gbc_lblSecArt = new GridBagConstraints();
-		gbc_lblSecArt.gridheight = 2;
-		gbc_lblSecArt.insets = new Insets(0, 0, 5, 5);
-		gbc_lblSecArt.gridx = 2;
-		gbc_lblSecArt.gridy = 1;
-		panel.add(lblSecArt, gbc_lblSecArt);
+		JLabel lblSeccion = new JLabel("Secci\u00F3n Articulos");
+		GridBagConstraints gbc_lblSeccion = new GridBagConstraints();
+		gbc_lblSeccion.gridheight = 2;
+		gbc_lblSeccion.insets = new Insets(0, 0, 5, 5);
+		gbc_lblSeccion.gridx = 2;
+		gbc_lblSeccion.gridy = 1;
+		panel.add(lblSeccion, gbc_lblSeccion);
 		
-		JButton btnIconoArt = new JButton("Icono");
-		GridBagConstraints gbc_btnIconoArt = new GridBagConstraints();
-		gbc_btnIconoArt.gridheight = 2;
-		gbc_btnIconoArt.insets = new Insets(0, 0, 5, 5);
-		gbc_btnIconoArt.gridx = 3;
-		gbc_btnIconoArt.gridy = 1;
-		panel.add(btnIconoArt, gbc_btnIconoArt);
+		JButton btnIcono = new JButton("Icono");
+		GridBagConstraints gbc_btnIcono = new GridBagConstraints();
+		gbc_btnIcono.gridheight = 2;
+		gbc_btnIcono.insets = new Insets(0, 0, 5, 5);
+		gbc_btnIcono.gridx = 3;
+		gbc_btnIcono.gridy = 1;
+		panel.add(btnIcono, gbc_btnIcono);
 		
-		JLabel lblEspacioArtDer = new JLabel("        ");
-		GridBagConstraints gbc_lblEspacioArtDer = new GridBagConstraints();
-		gbc_lblEspacioArtDer.insets = new Insets(0, 0, 5, 5);
-		gbc_lblEspacioArtDer.gridx = 0;
-		gbc_lblEspacioArtDer.gridy = 3;
-		panel.add(lblEspacioArtDer, gbc_lblEspacioArtDer);
+		JLabel lblEspacioDer = new JLabel("        ");
+		GridBagConstraints gbc_lblEspacioDer = new GridBagConstraints();
+		gbc_lblEspacioDer.insets = new Insets(0, 0, 5, 5);
+		gbc_lblEspacioDer.gridx = 0;
+		gbc_lblEspacioDer.gridy = 3;
+		panel.add(lblEspacioDer, gbc_lblEspacioDer);
 		
 		JTabbedPane tabArt = new JTabbedPane(JTabbedPane.TOP);
 		GridBagConstraints gbc_tabArt = new GridBagConstraints();
@@ -83,36 +83,36 @@ public class PanelArticulo extends JPanel {
 		gbc_tabArt.gridy = 3;
 		panel.add(tabArt, gbc_tabArt);
 		
-		JLabel lblEspacioArtIzq = new JLabel("        ");
-		GridBagConstraints gbc_lblEspacioArtIzq = new GridBagConstraints();
-		gbc_lblEspacioArtIzq.insets = new Insets(0, 0, 5, 0);
-		gbc_lblEspacioArtIzq.gridx = 4;
-		gbc_lblEspacioArtIzq.gridy = 3;
-		panel.add(lblEspacioArtIzq, gbc_lblEspacioArtIzq);
+		JLabel lblEspacioIzq = new JLabel("        ");
+		GridBagConstraints gbc_lblEspacioIzq = new GridBagConstraints();
+		gbc_lblEspacioIzq.insets = new Insets(0, 0, 5, 0);
+		gbc_lblEspacioIzq.gridx = 4;
+		gbc_lblEspacioIzq.gridy = 3;
+		panel.add(lblEspacioIzq, gbc_lblEspacioIzq);
 		
-		JLabel lblEspacioArtMed = new JLabel(" ");
-		GridBagConstraints gbc_lblEspacioArtMed = new GridBagConstraints();
-		gbc_lblEspacioArtMed.insets = new Insets(0, 0, 5, 5);
-		gbc_lblEspacioArtMed.gridx = 2;
-		gbc_lblEspacioArtMed.gridy = 4;
-		panel.add(lblEspacioArtMed, gbc_lblEspacioArtMed);
+		JLabel lblEspacioMed = new JLabel(" ");
+		GridBagConstraints gbc_lblEspacioMed = new GridBagConstraints();
+		gbc_lblEspacioMed.insets = new Insets(0, 0, 5, 5);
+		gbc_lblEspacioMed.gridx = 2;
+		gbc_lblEspacioMed.gridy = 4;
+		panel.add(lblEspacioMed, gbc_lblEspacioMed);
 		
-		txtOpcionalesArt = new JTextField();
-		txtOpcionalesArt.setEditable(false);
-		txtOpcionalesArt.setColumns(10);
-		GridBagConstraints gbc_txtOpcionalesArt = new GridBagConstraints();
-		gbc_txtOpcionalesArt.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtOpcionalesArt.insets = new Insets(0, 0, 5, 5);
-		gbc_txtOpcionalesArt.gridx = 2;
-		gbc_txtOpcionalesArt.gridy = 5;
-		panel.add(txtOpcionalesArt, gbc_txtOpcionalesArt);
+		txtOpcionales = new JTextField();
+		txtOpcionales.setEditable(false);
+		txtOpcionales.setColumns(10);
+		GridBagConstraints gbc_txtOpcionales = new GridBagConstraints();
+		gbc_txtOpcionales.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtOpcionales.insets = new Insets(0, 0, 5, 5);
+		gbc_txtOpcionales.gridx = 2;
+		gbc_txtOpcionales.gridy = 5;
+		panel.add(txtOpcionales, gbc_txtOpcionales);
 		
-		JLabel lblEspacioArtAba = new JLabel(" ");
-		GridBagConstraints gbc_lblEspacioArtAba = new GridBagConstraints();
-		gbc_lblEspacioArtAba.insets = new Insets(0, 0, 0, 5);
-		gbc_lblEspacioArtAba.gridx = 2;
-		gbc_lblEspacioArtAba.gridy = 6;
-		panel.add(lblEspacioArtAba, gbc_lblEspacioArtAba);
+		JLabel lblEspacioAba = new JLabel(" ");
+		GridBagConstraints gbc_lblEspacioAba = new GridBagConstraints();
+		gbc_lblEspacioAba.insets = new Insets(0, 0, 0, 5);
+		gbc_lblEspacioAba.gridx = 2;
+		gbc_lblEspacioAba.gridy = 6;
+		panel.add(lblEspacioAba, gbc_lblEspacioAba);
 
 	}
 
