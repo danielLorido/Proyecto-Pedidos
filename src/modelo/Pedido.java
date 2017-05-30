@@ -21,7 +21,7 @@ public class Pedido implements Serializable {
 	}
 
 	/**
-	 * Calcula el total de todas las líneas de pedido con sus cantidades
+	 * Calcula el total de todas las lï¿½neas de pedido con sus cantidades
 	 * 
 	 * @return precioTotal de la compra
 	 */
@@ -60,6 +60,11 @@ public class Pedido implements Serializable {
 
 	public void setPrecioTotal(float precioTotal) {
 		this.precioTotal = precioTotal;
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
 	}
 
 }
