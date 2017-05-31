@@ -21,9 +21,9 @@ import javax.swing.JComboBox;
 
 public class PedidosUI extends JFrame {
 	
-	public PanelArticulo pnlArticulos = new PanelArticulo();
-	public PanelCliente pnlClientes = new PanelCliente();
-	public PanelPedidos pnlPedidos = new PanelPedidos();
+	public PanelArticulo2 pnlArticulos = new PanelArticulo2();
+	public PanelCliente2 pnlClientes = new PanelCliente2();
+	public PanelPedidos2 pnlPedidos = new PanelPedidos2();
 
 	protected JPanel contentPane;
 	protected JButton btnCliente;

@@ -9,13 +9,13 @@ import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
-public class PanelPedidos extends JPanel {
+public class PanelPedidos2 extends JPanel {
 	private JTextField txtOpcionalesPed;
 
 	/**
 	 * Create the panel.
 	 */
-	public PanelPedidos() {
+	public PanelPedidos2() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{228, 0};
 		gridBagLayout.rowHeights = new int[]{90, 0};
