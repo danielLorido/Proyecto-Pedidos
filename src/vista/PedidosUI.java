@@ -12,23 +12,17 @@ import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
-import javax.swing.JTabbedPane;
-import javax.swing.JTextField;
-import java.awt.SystemColor;
-import javax.swing.border.SoftBevelBorder;
 
 import vista.articulo.PanelArticulo;
 import vista.cliente.PanelCliente;
 import vista.pedido.PanelPedidos;
 
-import javax.swing.border.BevelBorder;
-import javax.swing.JComboBox;
 
 public class PedidosUI extends JFrame {
 	
-	public JPanel pnlArticulos = new PanelArticulo2();
-	public JPanel pnlClientes = new PanelCliente2();
-	public JPanel pnlPedidos = new PanelPedidos2();
+	public JPanel pnlArticulos = new PanelArticulo();
+	public JPanel pnlClientes = new PanelCliente();
+	public JPanel pnlPedidos = new PanelPedidos();
 
 	protected JPanel contentPane;
 	protected JButton btnCliente;

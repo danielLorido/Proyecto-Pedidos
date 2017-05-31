@@ -1,25 +1,35 @@
-package vista;
+package vista.cliente;
 
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
-import javax.swing.JButton;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import java.awt.Color;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.JComboBox;
+import javax.swing.SwingConstants;
+import java.awt.BorderLayout;
+import javax.swing.border.EmptyBorder;
+import java.awt.CardLayout;
 
-public class PanelPedidos2 extends JPanel {
-	
-	protected JTextField txtOpcionalesPed;
-	protected JTabbedPane tabPed;
-	protected JButton btnIconoPed;
-	protected JButton btnInicioPed;
+public class PanelCliente extends JPanel {
+
+	protected JTextField txtOpcionalesCli;
+	protected JTabbedPane tabCli;
+	protected JButton btnIconoCli;
+	protected JButton btnInicioCli;
+//	protected JPanel altaCli = new AltaCliente();
 
 	/**
 	 * Create the panel.
 	 */
-	public PanelPedidos2() {
+	public PanelCliente() {
+
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 556, 0 };
 		gridBagLayout.rowHeights = new int[] { 401, 0 };
@@ -40,42 +50,44 @@ public class PanelPedidos2 extends JPanel {
 		gbl_panel.rowWeights = new double[] { 1.0, 1.0, 10.0, 1.0, 0.0, 1.0, Double.MIN_VALUE };
 		panel.setLayout(gbl_panel);
 
-		btnInicioPed = new JButton("<- Inicio");
+		btnInicioCli = new JButton("<- Inicio");
 		GridBagConstraints gbc_btnInicioArt = new GridBagConstraints();
 		gbc_btnInicioArt.anchor = GridBagConstraints.SOUTHWEST;
 		gbc_btnInicioArt.insets = new Insets(0, 0, 5, 5);
 		gbc_btnInicioArt.gridx = 1;
 		gbc_btnInicioArt.gridy = 0;
-		panel.add(btnInicioPed, gbc_btnInicioArt);
+		panel.add(btnInicioCli, gbc_btnInicioArt);
 
-		JLabel lblSecPed = new JLabel("SECCION PEDIDOS");
-		GridBagConstraints gbc_lblSecPed = new GridBagConstraints();
-		gbc_lblSecPed.anchor = GridBagConstraints.SOUTH;
-		gbc_lblSecPed.insets = new Insets(0, 0, 5, 5);
-		gbc_lblSecPed.gridx = 2;
-		gbc_lblSecPed.gridy = 0;
-		panel.add(lblSecPed, gbc_lblSecPed);
+		JLabel lblSecCli = new JLabel("SECCI\u00D3N CLIENTES");
+		GridBagConstraints gbc_lblSecCli = new GridBagConstraints();
+		gbc_lblSecCli.anchor = GridBagConstraints.SOUTH;
+		gbc_lblSecCli.insets = new Insets(0, 0, 5, 5);
+		gbc_lblSecCli.gridx = 2;
+		gbc_lblSecCli.gridy = 0;
+		panel.add(lblSecCli, gbc_lblSecCli);
 
-		btnIconoPed = new JButton("Icono");
+		btnIconoCli = new JButton("Icono");
 		GridBagConstraints gbc_btnIconoArt = new GridBagConstraints();
 		gbc_btnIconoArt.anchor = GridBagConstraints.SOUTHEAST;
 		gbc_btnIconoArt.insets = new Insets(0, 0, 5, 5);
 		gbc_btnIconoArt.gridx = 3;
 		gbc_btnIconoArt.gridy = 0;
-		panel.add(btnIconoPed, gbc_btnIconoArt);
+		panel.add(btnIconoCli, gbc_btnIconoArt);
 
-		tabPed = new JTabbedPane(JTabbedPane.TOP);
+		tabCli = new JTabbedPane(JTabbedPane.TOP);
 		GridBagConstraints gbc_tabArt = new GridBagConstraints();
 		gbc_tabArt.fill = GridBagConstraints.BOTH;
 		gbc_tabArt.gridwidth = 3;
 		gbc_tabArt.insets = new Insets(0, 0, 5, 5);
 		gbc_tabArt.gridx = 1;
 		gbc_tabArt.gridy = 2;
-		panel.add(tabPed, gbc_tabArt);
+		panel.add(tabCli, gbc_tabArt);
 
-		txtOpcionalesPed = new JTextField();
-		txtOpcionalesPed.setEditable(false);
-		txtOpcionalesPed.setColumns(10);
+//		tabCli.addTab("Alta", altaCli);
+
+		txtOpcionalesCli = new JTextField();
+		txtOpcionalesCli.setEditable(false);
+		txtOpcionalesCli.setColumns(10);
 		GridBagConstraints gbc_txtOpcionalesArt = new GridBagConstraints();
 		gbc_txtOpcionalesArt.anchor = GridBagConstraints.NORTH;
 		gbc_txtOpcionalesArt.gridwidth = 3;
@@ -83,7 +95,7 @@ public class PanelPedidos2 extends JPanel {
 		gbc_txtOpcionalesArt.insets = new Insets(0, 0, 5, 5);
 		gbc_txtOpcionalesArt.gridx = 1;
 		gbc_txtOpcionalesArt.gridy = 4;
-		panel.add(txtOpcionalesPed, gbc_txtOpcionalesArt);
+		panel.add(txtOpcionalesCli, gbc_txtOpcionalesArt);
 
 	}
 
