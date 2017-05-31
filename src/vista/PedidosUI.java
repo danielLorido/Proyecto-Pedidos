@@ -21,9 +21,9 @@ import javax.swing.JComboBox;
 
 public class PedidosUI extends JFrame {
 	
-	public PanelArticulo pnlArticulos = new PanelArticulo();
-	public PanelCliente pnlClientes = new PanelCliente();
-	public PanelPedidos pnlPedidos = new PanelPedidos();
+	public JPanel pnlArticulos = new PanelArticulo();
+	public JPanel pnlClientes = new PanelCliente();
+	public JPanel pnlPedidos = new PanelPedidos();
 
 	protected JPanel contentPane;
 	protected JButton btnCliente;
@@ -97,9 +97,9 @@ public class PedidosUI extends JFrame {
 		gbc_label.gridy = 2;
 		pnlPrincipal.add(label, gbc_label);
 		
-		contentPane.add(pnlArticulos);
-		contentPane.add(pnlClientes);
-		contentPane.add(pnlPedidos);
+		contentPane.add(pnlArticulos, "articulos");
+		contentPane.add(pnlClientes, "clientes");
+		contentPane.add(pnlPedidos, "pedidos");
 		
 	}
 
