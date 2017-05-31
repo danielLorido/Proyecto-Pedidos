@@ -16,6 +16,11 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import java.awt.SystemColor;
 import javax.swing.border.SoftBevelBorder;
+
+import vista.articulo.PanelArticulo;
+import vista.cliente.PanelCliente;
+import vista.pedido.PanelPedidos;
+
 import javax.swing.border.BevelBorder;
 import javax.swing.JComboBox;
 
