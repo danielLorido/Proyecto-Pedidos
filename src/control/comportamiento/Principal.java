@@ -2,7 +2,7 @@ package control.comportamiento;
 
 import java.awt.EventQueue;
 
-public class Principal extends ParaPedidosUI{
+public class Principal extends ParaPedidosUI {
 
 	/**
 	 * Launch the application.

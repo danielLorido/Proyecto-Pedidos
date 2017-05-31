@@ -9,27 +9,25 @@ import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 
 public class ParaPedidosUI extends PedidosUI {
-	
+
 	public ParaPedidosUI() {
 		// Probando como cambiar de panel
 		btnCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				((CardLayout)(contentPane.getLayout())).show(pnlClientes, "");
-				pnlClientes.show();
-				// Debería ser algo así
-				// contentPane.getLayout().show();
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane, "clientes");
 			}
 		});
 		btnArticulo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pnlPrincipal.show(false);
-				pnlArticulos.show();
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane, "articulos");
 			}
 		});
 		btnPedidos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pnlPrincipal.show(false);
-				pnlPedidos.show();
+				CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+				cardLayout.show(contentPane, "pedidos");
 			}
 		});
 	}

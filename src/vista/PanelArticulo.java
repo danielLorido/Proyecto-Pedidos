@@ -16,6 +16,7 @@ public class PanelArticulo extends JPanel {
 	protected JButton btnIconoArt;
 	protected JButton btnInicioArt;
 	protected JPanel altaArt = new AltaArticulo();
+	protected JPanel consultaArt = new ConsultaArticulo();
 
 	/**
 	 * Create the panel.
@@ -74,6 +75,9 @@ public class PanelArticulo extends JPanel {
 		gbc_tabArt.gridy = 2;
 		panel.add(tabArt, gbc_tabArt);
 		tabArt.addTab("Alta", altaArt);
+		tabArt.addTab("Consulta", consultaArt);
+		// Parece que se le puede añadir un icono, habrá que comprobarlo
+		// tabArt.addTab("Consulta", icon, consultaArt);
 
 		txtOpcionalesArt = new JTextField();
 		txtOpcionalesArt.setEditable(false);
