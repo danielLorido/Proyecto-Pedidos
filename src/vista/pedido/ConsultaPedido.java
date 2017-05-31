@@ -16,11 +16,11 @@ import javax.swing.JTable;
 import java.awt.Font;
 
 public class ConsultaPedido extends JPanel {
-	private JComboBox<Pedido> comboPedido;
-	private JTextField textId;
-	private JTextField textCliente;
-	private JTable table;
-	private JLabel lblTotal;
+	protected JComboBox<Pedido> comboPedido;
+	protected JTextField textId;
+	protected JTextField textCliente;
+	protected JTable table;
+	protected JLabel lblTotal;
 
 	/**
 	 * Create the panel.
