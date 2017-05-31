@@ -23,11 +23,13 @@ public class PanelCliente extends JPanel {
 	protected JTabbedPane tabCli;
 	protected JButton btnIconoCli;
 	protected JButton btnInicioCli;
+	protected JPanel altaCli = new AltaCliente();
 
 	/**
 	 * Create the panel.
 	 */
 	public PanelCliente() {
+
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 556, 0 };
 		gridBagLayout.rowHeights = new int[] { 401, 0 };
@@ -80,6 +82,8 @@ public class PanelCliente extends JPanel {
 		gbc_tabArt.gridx = 1;
 		gbc_tabArt.gridy = 2;
 		panel.add(tabCli, gbc_tabArt);
+
+		tabCli.addTab("Alta", altaCli);
 
 		txtOpcionalesCli = new JTextField();
 		txtOpcionalesCli.setEditable(false);

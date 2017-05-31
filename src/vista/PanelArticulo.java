@@ -10,11 +10,12 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
 public class PanelArticulo extends JPanel {
-	
+
 	protected JTextField txtOpcionalesArt;
 	protected JTabbedPane tabArt;
 	protected JButton btnIconoArt;
 	protected JButton btnInicioArt;
+	protected JPanel altaArt = new AltaArticulo();
 
 	/**
 	 * Create the panel.
@@ -72,6 +73,7 @@ public class PanelArticulo extends JPanel {
 		gbc_tabArt.gridx = 1;
 		gbc_tabArt.gridy = 2;
 		panel.add(tabArt, gbc_tabArt);
+		tabArt.addTab("Alta", altaArt);
 
 		txtOpcionalesArt = new JTextField();
 		txtOpcionalesArt.setEditable(false);
