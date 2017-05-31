@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
-public class PanelArticulo2 extends JPanel {
+public class PanelArticulo extends JPanel {
 	private JTextField txtOpcionalesArt;
 	private JButton btnInicioArt;
 	private JTabbedPane tabArt;
@@ -17,7 +17,7 @@ public class PanelArticulo2 extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public PanelArticulo2() {
+	public PanelArticulo() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] {556, 0};
 		gridBagLayout.rowHeights = new int[] {401, 0};

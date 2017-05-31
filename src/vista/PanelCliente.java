@@ -17,7 +17,7 @@ import java.awt.BorderLayout;
 import javax.swing.border.EmptyBorder;
 import java.awt.CardLayout;
 
-public class PanelCliente2 extends JPanel {
+public class PanelCliente extends JPanel {
 	public JPanel panel;
 	private JButton btnInicioCli;
 	private JButton btnIconoCli;
@@ -30,7 +30,7 @@ public class PanelCliente2 extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public PanelCliente2() {
+	public PanelCliente() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{556, 0};
 		gridBagLayout.rowHeights = new int[]{401, 0};
