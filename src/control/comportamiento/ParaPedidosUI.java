@@ -1,8 +1,8 @@
 package control.comportamiento;
 
-import vista.PanelArticulo;
-import vista.PanelCliente;
-import vista.PanelPedidos;
+import vista.PanelArticulo2;
+import vista.PanelCliente2;
+import vista.PanelPedidos2;
 import vista.PedidosUI;
 import java.awt.event.ActionListener;
 import java.awt.CardLayout;
