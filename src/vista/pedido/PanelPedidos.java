@@ -2,6 +2,9 @@ package vista.pedido;
 
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -75,7 +78,10 @@ public class PanelPedidos extends JPanel {
 		gbc_tabArt.gridy = 2;
 		panel.add(tabPed, gbc_tabArt);
 		
+		Icon iconoAlta = new ImageIcon(getClass().getResource("/iconos/altas.png"));
+
 		tabPed.addTab("Alta",AltaPedido);
+		tabPed.setIconAt(0,iconoAlta);
 		tabPed.addTab("Consulta",ConsultaPedido);
 
 		txtOpcionalesPed = new JTextField();
