@@ -143,6 +143,7 @@ public class ConsultaArticulo extends JPanel {
 		pnlConsultaArt.add(scrollPaneArt, gbc_scrollPaneArt);
 		
 		JTextArea txtDescripcionArt = new JTextArea();
+		txtDescripcionArt.setEditable(false);
 		scrollPaneArt.setViewportView(txtDescripcionArt);
 
 	}
