@@ -13,10 +13,10 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 
 public class ConsultaCliente extends JPanel {
-	private JTextField txtDni;
-	private JTextField txtNombre;
-	private JTextField txtApellido;
-	private JTextField txtDireccion;
+	protected JTextField txtDni;
+	protected JTextField txtNombre;
+	protected JTextField txtApellido;
+	protected JTextField txtDireccion;
 
 	/**
 	 * Create the panel.
