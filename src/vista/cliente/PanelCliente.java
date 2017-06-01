@@ -23,7 +23,9 @@ public class PanelCliente extends JPanel {
 	protected JTabbedPane tabCli;
 	protected JButton btnIconoCli;
 	protected JButton btnInicioCli;
-//	protected JPanel altaCli = new AltaCliente();
+	protected JPanel altaCli = new AltaCliente();
+	protected JPanel consultaCli = new ConsultaCliente();
+	protected JPanel bajaCli = new BajaCliente();
 
 	/**
 	 * Create the panel.
@@ -83,7 +85,9 @@ public class PanelCliente extends JPanel {
 		gbc_tabArt.gridy = 2;
 		panel.add(tabCli, gbc_tabArt);
 
-//		tabCli.addTab("Alta", altaCli);
+		tabCli.addTab("Alta", altaCli);
+		tabCli.addTab("Consulta", consultaCli);
+		tabCli.addTab("Baja", bajaCli);
 
 		txtOpcionalesCli = new JTextField();
 		txtOpcionalesCli.setEditable(false);
