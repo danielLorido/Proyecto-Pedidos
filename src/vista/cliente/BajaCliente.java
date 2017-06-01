@@ -14,25 +14,6 @@ import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.JButton;
 import java.awt.Font;
-
-public class BajaCliente extends JPanel {
-
-	protected JTextField txtDni;
-	protected JTextField txtNombre;
-	protected JTextField txtApellido;
-	protected JTextField txtDireccion;
-	protected JButton btnBaja;
-
-	/**
-	 * Create the panel.
-	 */
-	public BajaCliente() {
-		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0};
-		gridBagLayout.columnWeights = new double[]{1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
-		setLayout(gridBagLayout);
 		
 		JPanel pnlConsultaCli = new JPanel();
 		pnlConsultaCli.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
@@ -153,6 +134,22 @@ public class BajaCliente extends JPanel {
 		gbc_btnBaja.gridy = 7;
 		pnlConsultaCli.add(btnBaja, gbc_btnBaja);
 
-	}
 
+		JPanel pnlBajaCli = new JPanel();
+		pnlBajaCli.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		pnlBajaCli.setBackground(Color.WHITE);
+		GridBagConstraints gbc_pnlBajaCli = new GridBagConstraints();
+		gbc_pnlBajaCli.fill = GridBagConstraints.BOTH;
+		gbc_pnlBajaCli.gridx = 0;
+		gbc_pnlBajaCli.gridy = 0;
+		add(pnlBajaCli, gbc_pnlBajaCli);
+		GridBagLayout gbl_pnlBajaCli = new GridBagLayout();
+		gbl_pnlBajaCli.columnWidths = new int[] { 0, 0, 0, 0, 0, 0, 0 };
+		gbl_pnlBajaCli.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+		gbl_pnlBajaCli.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE };
+		gbl_pnlBajaCli.rowWeights = new double[] { 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE };
+		pnlBajaCli.setLayout(gbl_pnlBajaCli);
+
+
+	}
 }
