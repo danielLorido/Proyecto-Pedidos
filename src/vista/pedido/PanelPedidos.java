@@ -15,6 +15,8 @@ public class PanelPedidos extends JPanel {
 	protected JTabbedPane tabPed;
 	protected JButton btnIconoPed;
 	protected JButton btnInicioPed;
+	protected JPanel AltaPedido = new AltaPedido();
+	protected JPanel ConsultaPedido = new ConsultaPedido();
 
 	/**
 	 * Create the panel.
@@ -72,6 +74,9 @@ public class PanelPedidos extends JPanel {
 		gbc_tabArt.gridx = 1;
 		gbc_tabArt.gridy = 2;
 		panel.add(tabPed, gbc_tabArt);
+		
+		tabPed.addTab("Alta",AltaPedido);
+		tabPed.addTab("Consulta",ConsultaPedido);
 
 		txtOpcionalesPed = new JTextField();
 		txtOpcionalesPed.setEditable(false);

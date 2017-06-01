@@ -16,6 +16,7 @@ import java.awt.Font;
 import vista.articulo.PanelArticulo;
 import vista.cliente.PanelCliente;
 import vista.pedido.PanelPedidos;
+import java.awt.Dimension;
 
 
 public class PedidosUI extends JFrame {
@@ -35,8 +36,9 @@ public class PedidosUI extends JFrame {
 	 * Create the frame.
 	 */
 	public PedidosUI() {
+		setMinimumSize(new Dimension(646, 443));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 646, 442);
+		setBounds(100, 100, 646, 445);
 		setTitle("Proyectos Pedidos");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

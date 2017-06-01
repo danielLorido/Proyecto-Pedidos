@@ -12,10 +12,11 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 public class AltaCliente extends JPanel {
-	private JTextField txtDni;
-	private JTextField txtNombre;
-	private JTextField txtApellido;
-	private JTextField txtDireccion;
+	
+	protected JTextField txtDni;
+	protected JTextField txtNombre;
+	protected JTextField txtApellido;
+	protected JTextField txtDireccion;
 
 	/**
 	 * Create the panel.
