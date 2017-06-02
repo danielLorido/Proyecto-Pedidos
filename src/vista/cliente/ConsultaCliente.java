@@ -11,12 +11,15 @@ import java.awt.Insets;
 import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
+import javax.swing.JButton;
 
 public class ConsultaCliente extends JPanel {
 	protected JTextField txtDni;
 	protected JTextField txtNombre;
 	protected JTextField txtApellido;
 	protected JTextField txtDireccion;
+	protected JButton btnBuscaCli;
+	protected JComboBox comboBox;
 
 	/**
 	 * Create the panel.
@@ -38,16 +41,16 @@ public class ConsultaCliente extends JPanel {
 		gbc_pnlConsultaCli.gridy = 0;
 		add(pnlConsultaCli, gbc_pnlConsultaCli);
 		GridBagLayout gbl_pnlConsultaCli = new GridBagLayout();
-		gbl_pnlConsultaCli.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0};
+		gbl_pnlConsultaCli.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_pnlConsultaCli.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_pnlConsultaCli.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
+		gbl_pnlConsultaCli.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
 		gbl_pnlConsultaCli.rowWeights = new double[]{1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
 		pnlConsultaCli.setLayout(gbl_pnlConsultaCli);
 		
 		JLabel lblConsulta = new JLabel("Consulta Cliente");
 		GridBagConstraints gbc_lblConsulta = new GridBagConstraints();
 		gbc_lblConsulta.gridwidth = 6;
-		gbc_lblConsulta.insets = new Insets(0, 0, 5, 0);
+		gbc_lblConsulta.insets = new Insets(0, 0, 5, 5);
 		gbc_lblConsulta.gridx = 0;
 		gbc_lblConsulta.gridy = 0;
 		pnlConsultaCli.add(lblConsulta, gbc_lblConsulta);
@@ -60,7 +63,7 @@ public class ConsultaCliente extends JPanel {
 		gbc_lblSeleccion.gridy = 1;
 		pnlConsultaCli.add(lblSeleccion, gbc_lblSeleccion);
 		
-		JComboBox comboBox = new JComboBox();
+		comboBox = new JComboBox();
 		GridBagConstraints gbc_comboBox = new GridBagConstraints();
 		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox.gridwidth = 2;
@@ -68,6 +71,13 @@ public class ConsultaCliente extends JPanel {
 		gbc_comboBox.gridx = 3;
 		gbc_comboBox.gridy = 1;
 		pnlConsultaCli.add(comboBox, gbc_comboBox);
+		
+		btnBuscaCli = new JButton("");
+		GridBagConstraints gbc_btnBuscaCli = new GridBagConstraints();
+		gbc_btnBuscaCli.insets = new Insets(0, 0, 5, 5);
+		gbc_btnBuscaCli.gridx = 5;
+		gbc_btnBuscaCli.gridy = 1;
+		pnlConsultaCli.add(btnBuscaCli, gbc_btnBuscaCli);
 		
 		JLabel lblDni = new JLabel("Dni");
 		lblDni.setHorizontalAlignment(SwingConstants.LEFT);
@@ -81,6 +91,7 @@ public class ConsultaCliente extends JPanel {
 		txtDni.setEditable(false);
 		txtDni.setColumns(10);
 		GridBagConstraints gbc_txtDni = new GridBagConstraints();
+		gbc_txtDni.gridwidth = 2;
 		gbc_txtDni.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtDni.insets = new Insets(0, 0, 5, 5);
 		gbc_txtDni.gridx = 4;
@@ -98,6 +109,7 @@ public class ConsultaCliente extends JPanel {
 		txtNombre.setEditable(false);
 		txtNombre.setColumns(10);
 		GridBagConstraints gbc_txtNombre = new GridBagConstraints();
+		gbc_txtNombre.gridwidth = 2;
 		gbc_txtNombre.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtNombre.insets = new Insets(0, 0, 5, 5);
 		gbc_txtNombre.gridx = 4;
@@ -115,6 +127,7 @@ public class ConsultaCliente extends JPanel {
 		txtApellido.setEditable(false);
 		txtApellido.setColumns(10);
 		GridBagConstraints gbc_txtApellido = new GridBagConstraints();
+		gbc_txtApellido.gridwidth = 2;
 		gbc_txtApellido.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtApellido.insets = new Insets(0, 0, 5, 5);
 		gbc_txtApellido.gridx = 4;
@@ -132,6 +145,7 @@ public class ConsultaCliente extends JPanel {
 		txtDireccion.setEditable(false);
 		txtDireccion.setColumns(10);
 		GridBagConstraints gbc_txtDireccion = new GridBagConstraints();
+		gbc_txtDireccion.gridwidth = 2;
 		gbc_txtDireccion.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtDireccion.insets = new Insets(0, 0, 0, 5);
 		gbc_txtDireccion.gridx = 4;

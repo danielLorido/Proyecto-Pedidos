@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import java.awt.Insets;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class AltaCliente extends JPanel {
 	
@@ -17,6 +19,9 @@ public class AltaCliente extends JPanel {
 	protected JTextField txtNombre;
 	protected JTextField txtApellido;
 	protected JTextField txtDireccion;
+	protected JButton btnDarAlta;
+	protected JButton btnCancelar;
+	protected JTextField txtOpcionalesCli;
 
 	/**
 	 * Create the panel.
@@ -39,9 +44,9 @@ public class AltaCliente extends JPanel {
 		add(pnlAltaCli, gbc_pnlAltaCli);
 		GridBagLayout gbl_pnlAltaCli = new GridBagLayout();
 		gbl_pnlAltaCli.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
-		gbl_pnlAltaCli.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
-		gbl_pnlAltaCli.columnWeights = new double[]{0.0, 0.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
-		gbl_pnlAltaCli.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
+		gbl_pnlAltaCli.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_pnlAltaCli.columnWeights = new double[]{0.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
+		gbl_pnlAltaCli.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
 		pnlAltaCli.setLayout(gbl_pnlAltaCli);
 		
 		JLabel lblAlta = new JLabel("Alta Clientes");
@@ -105,7 +110,7 @@ public class AltaCliente extends JPanel {
 		gbc_txtApellido.gridy = 3;
 		pnlAltaCli.add(txtApellido, gbc_txtApellido);
 		
-		JLabel lblDireccion = new JLabel("Direcci\u00F3n");
+		JLabel lblDireccion = new JLabel("Direccion");
 		GridBagConstraints gbc_lblDireccion = new GridBagConstraints();
 		gbc_lblDireccion.fill = GridBagConstraints.VERTICAL;
 		gbc_lblDireccion.insets = new Insets(0, 0, 5, 5);
@@ -123,19 +128,32 @@ public class AltaCliente extends JPanel {
 		gbc_txtDireccion.gridy = 4;
 		pnlAltaCli.add(txtDireccion, gbc_txtDireccion);
 		
-		JButton btnDarAlta = new JButton("Dar Alta");
+		btnDarAlta = new JButton("Dar Alta");
 		GridBagConstraints gbc_btnDarAlta = new GridBagConstraints();
-		gbc_btnDarAlta.insets = new Insets(0, 0, 0, 5);
+		gbc_btnDarAlta.insets = new Insets(0, 0, 5, 5);
 		gbc_btnDarAlta.gridx = 2;
 		gbc_btnDarAlta.gridy = 5;
 		pnlAltaCli.add(btnDarAlta, gbc_btnDarAlta);
 		
-		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar = new JButton("Cancelar");
 		GridBagConstraints gbc_btnCancelar = new GridBagConstraints();
-		gbc_btnCancelar.insets = new Insets(0, 0, 0, 5);
+		gbc_btnCancelar.insets = new Insets(0, 0, 5, 5);
 		gbc_btnCancelar.gridx = 3;
 		gbc_btnCancelar.gridy = 5;
 		pnlAltaCli.add(btnCancelar, gbc_btnCancelar);
+		
+		txtOpcionalesCli = new JTextField();
+		txtOpcionalesCli.setFont(new Font("Dialog", Font.PLAIN, 16));
+		txtOpcionalesCli.setHorizontalAlignment(SwingConstants.CENTER);
+		txtOpcionalesCli.setEditable(false);
+		GridBagConstraints gbc_txtOpcionalesCli = new GridBagConstraints();
+		gbc_txtOpcionalesCli.gridwidth = 3;
+		gbc_txtOpcionalesCli.insets = new Insets(0, 0, 0, 5);
+		gbc_txtOpcionalesCli.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtOpcionalesCli.gridx = 1;
+		gbc_txtOpcionalesCli.gridy = 6;
+		pnlAltaCli.add(txtOpcionalesCli, gbc_txtOpcionalesCli);
+		txtOpcionalesCli.setColumns(10);
 
 	}
 

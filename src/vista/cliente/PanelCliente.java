@@ -10,6 +10,11 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import java.awt.Color;
 import javax.swing.border.SoftBevelBorder;
+
+import control.comportamiento.ParaAltaCliente;
+import control.comportamiento.ParaBajaCliente;
+import control.comportamiento.ParaConsultaCliente;
+
 import javax.swing.border.BevelBorder;
 import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
@@ -18,14 +23,12 @@ import javax.swing.border.EmptyBorder;
 import java.awt.CardLayout;
 
 public class PanelCliente extends JPanel {
-
-	protected JTextField txtOpcionalesCli;
 	protected JTabbedPane tabCli;
 	protected JButton btnIconoCli;
 	protected JButton btnInicioCli;
-	protected JPanel altaCli = new AltaCliente();
-	protected JPanel consultaCli = new ConsultaCliente();
-	protected JPanel bajaCli = new BajaCliente();
+	protected JPanel altaCli = new ParaAltaCliente();
+	protected JPanel consultaCli = new ParaConsultaCliente();
+	protected JPanel bajaCli = new ParaBajaCliente();
 
 	/**
 	 * Create the panel.
@@ -47,9 +50,9 @@ public class PanelCliente extends JPanel {
 		add(panel, gbc_panel);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[] { 0, 0, 0, 0, 0, 0 };
-		gbl_panel.rowHeights = new int[] { 21, -29, 0, 0, 0, 0, 0 };
+		gbl_panel.rowHeights = new int[] { 21, -29, 0, 0, 0 };
 		gbl_panel.columnWeights = new double[] { 1.0, 3.0, 3.0, 3.0, 1.0, Double.MIN_VALUE };
-		gbl_panel.rowWeights = new double[] { 1.0, 1.0, 10.0, 1.0, 0.0, 1.0, Double.MIN_VALUE };
+		gbl_panel.rowWeights = new double[] { 1.0, 1.0, 10.0, 1.0, Double.MIN_VALUE };
 		panel.setLayout(gbl_panel);
 
 		btnInicioCli = new JButton("<- Inicio");
@@ -60,7 +63,7 @@ public class PanelCliente extends JPanel {
 		gbc_btnInicioArt.gridy = 0;
 		panel.add(btnInicioCli, gbc_btnInicioArt);
 
-		JLabel lblSecCli = new JLabel("SECCI\u00D3N CLIENTES");
+		JLabel lblSecCli = new JLabel("SECCION CLIENTES");
 		GridBagConstraints gbc_lblSecCli = new GridBagConstraints();
 		gbc_lblSecCli.anchor = GridBagConstraints.SOUTH;
 		gbc_lblSecCli.insets = new Insets(0, 0, 5, 5);
@@ -88,18 +91,6 @@ public class PanelCliente extends JPanel {
 		tabCli.addTab("Alta", altaCli);
 		tabCli.addTab("Consulta", consultaCli);
 		tabCli.addTab("Baja", bajaCli);
-
-		txtOpcionalesCli = new JTextField();
-		txtOpcionalesCli.setEditable(false);
-		txtOpcionalesCli.setColumns(10);
-		GridBagConstraints gbc_txtOpcionalesArt = new GridBagConstraints();
-		gbc_txtOpcionalesArt.anchor = GridBagConstraints.NORTH;
-		gbc_txtOpcionalesArt.gridwidth = 3;
-		gbc_txtOpcionalesArt.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtOpcionalesArt.insets = new Insets(0, 0, 5, 5);
-		gbc_txtOpcionalesArt.gridx = 1;
-		gbc_txtOpcionalesArt.gridy = 4;
-		panel.add(txtOpcionalesCli, gbc_txtOpcionalesArt);
 
 	}
 

@@ -32,5 +32,4 @@ public class ParaPedidosUI extends PedidosUI {
 			}
 		});
 	}
-
 }
