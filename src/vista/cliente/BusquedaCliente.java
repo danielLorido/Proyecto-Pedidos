@@ -12,10 +12,11 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 public class BusquedaCliente extends JPanel {
-	private JTextField txtInserccion;
-	private JTextField txtNombre;
-	private JTextField txtApellidos;
-	private JTextField txtDireccion;
+	protected JTextField txtInserccion;
+	protected JTextField txtNombre;
+	protected JTextField txtApellidos;
+	protected JTextField txtDireccion;
+	protected JPanel pnlBusquedaCli;
 
 	/**
 	 * Create the panel.
@@ -28,7 +29,7 @@ public class BusquedaCliente extends JPanel {
 		gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
 		
-		JPanel pnlBusquedaCli = new JPanel();
+		pnlBusquedaCli = new JPanel();
 		pnlBusquedaCli.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		pnlBusquedaCli.setBackground(Color.WHITE);
 		GridBagConstraints gbc_pnlBusquedaCli = new GridBagConstraints();
