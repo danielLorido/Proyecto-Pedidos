@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.Toolkit;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
@@ -37,6 +39,7 @@ public class PedidosUI extends JFrame {
 	 */
 	public PedidosUI() {
 		setMinimumSize(new Dimension(646, 443));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("/iconos/tienda.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 646, 445);
 		setTitle("Proyectos Pedidos");

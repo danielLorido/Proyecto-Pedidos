@@ -43,17 +43,17 @@ public class AltaCliente extends JPanel {
 		gbc_pnlAltaCli.gridy = 0;
 		add(pnlAltaCli, gbc_pnlAltaCli);
 		GridBagLayout gbl_pnlAltaCli = new GridBagLayout();
-		gbl_pnlAltaCli.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_pnlAltaCli.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_pnlAltaCli.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_pnlAltaCli.columnWeights = new double[]{0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
+		gbl_pnlAltaCli.columnWeights = new double[]{0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
 		gbl_pnlAltaCli.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
 		pnlAltaCli.setLayout(gbl_pnlAltaCli);
 		
 		JLabel lblAlta = new JLabel("Alta Clientes");
 		GridBagConstraints gbc_lblAlta = new GridBagConstraints();
 		gbc_lblAlta.fill = GridBagConstraints.VERTICAL;
-		gbc_lblAlta.gridwidth = 7;
-		gbc_lblAlta.insets = new Insets(0, 0, 5, 5);
+		gbc_lblAlta.gridwidth = 8;
+		gbc_lblAlta.insets = new Insets(0, 0, 5, 0);
 		gbc_lblAlta.gridx = 0;
 		gbc_lblAlta.gridy = 0;
 		pnlAltaCli.add(lblAlta, gbc_lblAlta);
@@ -86,6 +86,7 @@ public class AltaCliente extends JPanel {
 		txtNombre = new JTextField();
 		txtNombre.setColumns(10);
 		GridBagConstraints gbc_txtNombre = new GridBagConstraints();
+		gbc_txtNombre.gridwidth = 2;
 		gbc_txtNombre.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtNombre.insets = new Insets(0, 0, 5, 5);
 		gbc_txtNombre.gridx = 3;
@@ -104,7 +105,7 @@ public class AltaCliente extends JPanel {
 		txtApellido.setColumns(10);
 		GridBagConstraints gbc_txtApellido = new GridBagConstraints();
 		gbc_txtApellido.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtApellido.gridwidth = 2;
+		gbc_txtApellido.gridwidth = 3;
 		gbc_txtApellido.insets = new Insets(0, 0, 5, 5);
 		gbc_txtApellido.gridx = 3;
 		gbc_txtApellido.gridy = 3;
@@ -122,7 +123,7 @@ public class AltaCliente extends JPanel {
 		txtDireccion.setColumns(10);
 		GridBagConstraints gbc_txtDireccion = new GridBagConstraints();
 		gbc_txtDireccion.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtDireccion.gridwidth = 2;
+		gbc_txtDireccion.gridwidth = 3;
 		gbc_txtDireccion.insets = new Insets(0, 0, 5, 5);
 		gbc_txtDireccion.gridx = 3;
 		gbc_txtDireccion.gridy = 4;
@@ -140,7 +141,7 @@ public class AltaCliente extends JPanel {
 		GridBagConstraints gbc_btnCancelar = new GridBagConstraints();
 		gbc_btnCancelar.anchor = GridBagConstraints.EAST;
 		gbc_btnCancelar.insets = new Insets(0, 0, 5, 5);
-		gbc_btnCancelar.gridx = 4;
+		gbc_btnCancelar.gridx = 5;
 		gbc_btnCancelar.gridy = 5;
 		pnlAltaCli.add(btnCancelar, gbc_btnCancelar);
 		
@@ -149,7 +150,7 @@ public class AltaCliente extends JPanel {
 		txtOpcionalesCli.setHorizontalAlignment(SwingConstants.CENTER);
 		txtOpcionalesCli.setEditable(false);
 		GridBagConstraints gbc_txtOpcionalesCli = new GridBagConstraints();
-		gbc_txtOpcionalesCli.gridwidth = 5;
+		gbc_txtOpcionalesCli.gridwidth = 6;
 		gbc_txtOpcionalesCli.insets = new Insets(0, 0, 0, 5);
 		gbc_txtOpcionalesCli.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtOpcionalesCli.gridx = 1;
