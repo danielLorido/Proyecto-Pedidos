@@ -39,10 +39,9 @@ public class DAO {
 				archivo.createNewFile();
 				inicial = true;
 			}
-			// este flujo es de sobreescritura
-			// flujoW = new FileOutputStream(archivo);
-			// este añade
+			// Creamos el flujo
 			flujoW = new FileOutputStream(archivo, !unico);
+			// Y lo creamos o lo sobreescribimos, dependiendo del parametro
 			if (unico || inicial)
 				adaptadorW = new ObjectOutputStream(flujoW);
 			else
@@ -104,6 +103,9 @@ public class DAO {
 		return socio;
 	}
 
+	/**
+	 * Cierra un flujo de datos
+	 */
 	public void cerrar() {
 		try {
 			adaptadorLectura.close();
@@ -113,26 +115,40 @@ public class DAO {
 
 	}
 
+	/**
+	 * Borra un objeto de un archivo en una posicion especifica en un fichero
+	 * especifico
+	 * 
+	 * @param encontrado
+	 *            La posicion del objeto que queremos borrar
+	 * @param ruta
+	 *            La ruta donde está el fichero con los objetos serializados
+	 * @param lista
+	 *            Boleano para saber si es una lista o no, true si lo es o false
+	 *            para lo contrario
+	 * @return True si lo ha borrado correctamente o false para lo contrario
+	 */
 	public boolean borrar(int encontrado, String ruta, boolean lista) {
 		File antiguo = new File(ruta);
 		File nuevo = new File("respaldo.bak");
 		Object obtenido = leer(ruta, lista);
 		int contador = 0;
 		while (obtenido != null) {
-			// antews de escribir hay que comprobar que sea el elemento
-			// concreto
-			// que indica el elemento encontrado
-			if (encontrado == contador)
+			// Antes de escribir hay que comprobar que sea el elemento
+			// concreto que indica el elemento encontrado
+			if (encontrado == contador) {
 				// con esta orden salto un objeto y no lo grabo
 				obtenido = leer(ruta, lista);
-			if (obtenido != null)
+			}
+			if (obtenido != null) {
 				grabar(obtenido, ruta, lista);
+			}
 			contador++;
 			obtenido = leer(ruta, lista);
 		}
-		// tendriamos que renombrar el archivo nuevo y borrar el antiguo
-		//aqui borramos el ficheor fisico no el objeto file que se ha creado 
-		//con una ruta a un elemento que puede existir o no
+		// Tendriamos que renombrar el archivo nuevo y borrar el antiguo
+		// Aqui borramos el fichero fisico no el objeto file que se ha creado
+		// con una ruta a un elemento que puede existir o no
 		antiguo.delete();
 		return nuevo.renameTo(antiguo);
 	}

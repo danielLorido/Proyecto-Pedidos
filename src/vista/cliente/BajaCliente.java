@@ -19,6 +19,7 @@ public class BajaCliente extends JPanel {
 	protected JTextField txtNombre;
 	protected JTextField txtApellido;
 	protected JTextField txtDireccion;
+	protected JButton btnBaja;
 	/**
 	 * Create the panel.
 	 */
@@ -139,7 +140,7 @@ public class BajaCliente extends JPanel {
 		gbc_txtDireccion.gridy = 6;
 		pnlBajaCli.add(txtDireccion, gbc_txtDireccion);
 		
-		JButton btnBaja = new JButton("Dar de Baja");
+		btnBaja = new JButton("Dar de Baja");
 		btnBaja.setBackground(Color.RED);
 		GridBagConstraints gbc_btnBaja = new GridBagConstraints();
 		gbc_btnBaja.anchor = GridBagConstraints.WEST;

@@ -1,6 +1,7 @@
 package control.logica;
 
 import java.io.File;
+import java.util.HashSet;
 import java.util.Set;
 
 import control.adaptador.GestorUnificado;
@@ -100,7 +101,7 @@ public class Gestor {
 	}
 
 	private int buscaLista(Object obj, Tipo tipo) {
-		Set col = (Set) new GestorUnificado(tipo).obtener();
+		HashSet col = (HashSet) new GestorUnificado(tipo).obtener();
 		if (col.contains(obj))
 			return 0;
 		else

@@ -79,10 +79,12 @@ public class PanelPedidos extends JPanel {
 		panel.add(tabPed, gbc_tabArt);
 		
 		Icon iconoAlta = new ImageIcon(getClass().getResource("/iconos/altas.png"));
+		Icon iconoConsulta = new ImageIcon(getClass().getResource("/iconos/consultas.png"));
 
 		tabPed.addTab("Alta",AltaPedido);
 		tabPed.setIconAt(0,iconoAlta);
 		tabPed.addTab("Consulta",ConsultaPedido);
+		tabPed.setIconAt(1, iconoConsulta);
 
 		txtOpcionalesPed = new JTextField();
 		txtOpcionalesPed.setEditable(false);

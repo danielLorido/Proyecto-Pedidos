@@ -20,6 +20,8 @@ public class AltaArticulo extends JPanel {
 	protected JTextField txtNombre;
 	protected JTextField txtPrecio;
 	protected JTextArea textDescripcion;
+	protected JButton btnDarAlta;
+	protected JButton btnCancelar;
 
 	/**
 	 * Create the panel.
@@ -132,14 +134,14 @@ public class AltaArticulo extends JPanel {
 		textDescripcion = new JTextArea();
 		scrollPane.setViewportView(textDescripcion);
 		
-		JButton btnDarAlta = new JButton("Dar Alta");
+		btnDarAlta = new JButton("Dar Alta");
 		GridBagConstraints gbc_btnDarAlta = new GridBagConstraints();
 		gbc_btnDarAlta.insets = new Insets(0, 0, 0, 5);
 		gbc_btnDarAlta.gridx = 2;
 		gbc_btnDarAlta.gridy = 5;
 		pnlAltaCli.add(btnDarAlta, gbc_btnDarAlta);
 		
-		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar = new JButton("Cancelar");
 		GridBagConstraints gbc_btnCancelar = new GridBagConstraints();
 		gbc_btnCancelar.insets = new Insets(0, 0, 0, 5);
 		gbc_btnCancelar.gridx = 3;
