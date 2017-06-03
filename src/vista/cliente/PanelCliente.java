@@ -83,17 +83,25 @@ public class PanelCliente extends JPanel {
 		panel.add(btnIconoCli, gbc_btnIconoArt);
 
 		tabCli = new JTabbedPane(JTabbedPane.TOP);
-		GridBagConstraints gbc_tabArt = new GridBagConstraints();
-		gbc_tabArt.fill = GridBagConstraints.BOTH;
-		gbc_tabArt.gridwidth = 3;
-		gbc_tabArt.insets = new Insets(0, 0, 5, 5);
-		gbc_tabArt.gridx = 1;
-		gbc_tabArt.gridy = 2;
-		panel.add(tabCli, gbc_tabArt);
+		GridBagConstraints gbc_tabCli = new GridBagConstraints();
+		gbc_tabCli.fill = GridBagConstraints.BOTH;
+		gbc_tabCli.gridwidth = 3;
+		gbc_tabCli.insets = new Insets(0, 0, 5, 5);
+		gbc_tabCli.gridx = 1;
+		gbc_tabCli.gridy = 2;
+		panel.add(tabCli, gbc_tabCli);
 
 		tabCli.addTab("Alta", altaCli);
 		tabCli.addTab("Consulta", consultaCli);
 		tabCli.addTab("Baja", bajaCli);
+		
+		Icon iconoAlta = new ImageIcon(getClass().getResource("/iconos/altas.png"));
+		Icon iconoConsulta = new ImageIcon(getClass().getResource("/iconos/consultas.png"));
+		Icon iconoBaja = new ImageIcon(getClass().getResource("/iconos/bajas.png"));
+
+		tabCli.setIconAt(0, iconoAlta);
+		tabCli.setIconAt(1, iconoConsulta);
+		tabCli.setIconAt(2, iconoBaja);
 
 	}
 
