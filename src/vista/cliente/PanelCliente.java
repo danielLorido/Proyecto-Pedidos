@@ -4,6 +4,9 @@ import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
@@ -88,6 +91,16 @@ public class PanelCliente extends JPanel {
 		tabCli.addTab("Alta", altaCli);
 		tabCli.addTab("Consulta", consultaCli);
 		tabCli.addTab("Baja", bajaCli);
+		
+		
+		Icon iconoAlta = new ImageIcon(getClass().getResource("/iconos/altas.png"));
+		Icon iconoConsulta = new ImageIcon(getClass().getResource("/iconos/consultas.png"));
+		Icon iconoBaja = new ImageIcon(getClass().getResource("/iconos/bajas.png"));
+
+		tabCli.setIconAt(0, iconoAlta);
+		tabCli.setIconAt(1, iconoConsulta);
+		tabCli.setIconAt(2, iconoBaja);
+
 
 		txtOpcionalesCli = new JTextField();
 		txtOpcionalesCli.setEditable(false);

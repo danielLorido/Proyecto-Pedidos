@@ -2,6 +2,9 @@ package vista.articulo;
 
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -10,13 +13,15 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
 public class PanelArticulo extends JPanel {
-	protected JTextField txtOpcionalesArt;
+	public JTextField txtOpcionalesArt;
 	protected JTabbedPane tabArt;
 	protected JButton btnIconoArt;
 	protected JButton btnInicioArt;
 
 	protected JPanel alta = new AltaArticulo();
 	protected JPanel consulta = new ConsultaArticulo();
+	protected JPanel baja = new BajaArticulo();
+//	protected JPanel altaArt = new ParaAltaArticulo();
 
 	/**
 	 * Create the panel.
@@ -78,6 +83,15 @@ public class PanelArticulo extends JPanel {
 
 		tabArt.addTab("Alta", alta);
 		tabArt.addTab("Consulta", consulta);
+		tabArt.add("Baja", baja);
+
+		Icon iconoAlta = new ImageIcon(getClass().getResource("/iconos/altas.png"));
+		Icon iconoConsulta = new ImageIcon(getClass().getResource("/iconos/consultas.png"));
+		Icon iconoBaja = new ImageIcon(getClass().getResource("/iconos/bajas.png"));
+
+		tabArt.setIconAt(0, iconoAlta);
+		tabArt.setIconAt(1, iconoConsulta);
+		tabArt.setIconAt(2, iconoBaja);
 
 		txtOpcionalesArt = new JTextField();
 		txtOpcionalesArt.setEditable(false);
