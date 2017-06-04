@@ -19,7 +19,7 @@ public class PanelArticulo extends JPanel {
 	protected JButton btnIconoArt;
 	protected JButton btnInicioArt;
 
-	protected JPanel alta = new AltaArticulo();
+	protected JPanel alta = new ParaAltaArticulo();
 	protected JPanel consulta = new ConsultaArticulo();
 	protected JPanel baja = new BajaArticulo();
 	// protected JPanel alta = new ParaAltaArticulo();
@@ -57,7 +57,7 @@ public class PanelArticulo extends JPanel {
 		gbc_btnInicioArt.gridy = 0;
 		panel.add(btnInicioArt, gbc_btnInicioArt);
 
-		JLabel lblSecArt = new JLabel("SECCIÓN ARTÍCULOS");
+		JLabel lblSecArt = new JLabel("SECCIï¿½N ARTï¿½CULOS");
 		GridBagConstraints gbc_lblSecArt = new GridBagConstraints();
 		gbc_lblSecArt.anchor = GridBagConstraints.SOUTH;
 		gbc_lblSecArt.insets = new Insets(0, 0, 5, 5);

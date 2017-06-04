@@ -8,16 +8,18 @@ import java.util.HashSet;
 import control.logica.Gestor;
 import modelo.Articulo;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 
 public class ParaAltaArticulo extends AltaArticulo {
 
-	PanelArticulo art = new PanelArticulo();
-	Gestor gestor = new Gestor();
 	boolean ok = false;
-	// HashSet<Articulo> artList = new HashSet<>();
 
 	public ParaAltaArticulo() {
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnDarAlta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -25,6 +27,7 @@ public class ParaAltaArticulo extends AltaArticulo {
 				String nombre = txtNombre.getText();
 				String precio = txtPrecio.getText();
 				String descripcion = textDescripcion.getText();
+				textAnomalia.setForeground(Color.red);
 
 				if (comprobarNumerico(numRef) && numRef.length() >= 4) {
 
@@ -37,7 +40,9 @@ public class ParaAltaArticulo extends AltaArticulo {
 								Articulo miArticulo = new Articulo(Integer.valueOf(numRef), nombre, descripcion,
 										Float.valueOf(precio));
 								// artList.add(miArticulo);
-								gestor.insertar(miArticulo);
+								new Gestor().insertar(miArticulo);
+								textAnomalia.setForeground(Color.green);
+								textAnomalia.setText("Articulo creado correctamente");
 							} else {
 								textAnomalia.setText("error: descripcion");
 							}
@@ -57,11 +62,11 @@ public class ParaAltaArticulo extends AltaArticulo {
 	}
 
 	/**
-	 * Comprueba si el dato introducido es numérico
+	 * Comprueba si el dato introducido es numï¿½rico
 	 * 
-	 * @return true si es todo números, false si hay una letra
+	 * @return true si es todo nï¿½meros, false si hay una letra
 	 */
-	public boolean comprobarNumerico(String texto) {
+	private boolean comprobarNumerico(String texto) {
 		for (int j = 0; j < texto.length(); j++) {
 			if (!Character.isAlphabetic(texto.charAt(j))) {
 				ok = true;
@@ -73,11 +78,11 @@ public class ParaAltaArticulo extends AltaArticulo {
 	}
 
 	/**
-	 * Comprueba si el dato introducido es alfabético
+	 * Comprueba si el dato introducido es alfabï¿½tico
 	 * 
-	 * @return false si aparece un número, true si es todo letras
+	 * @return false si aparece un nï¿½mero, true si es todo letras
 	 */
-	public boolean comprobarAlfabetico(String texto) {
+	private boolean comprobarAlfabetico(String texto) {
 		for (int j = 0; j < texto.length(); j++) {
 			if (Character.isAlphabetic(texto.charAt(j))) {
 				ok = true;
