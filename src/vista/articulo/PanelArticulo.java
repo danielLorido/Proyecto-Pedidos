@@ -12,8 +12,9 @@ import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
+import control.comportamiento.ParaAltaArticulo;
+
 public class PanelArticulo extends JPanel {
-	public JTextField txtOpcionalesArt;
 	protected JTabbedPane tabArt;
 	protected JButton btnIconoArt;
 	protected JButton btnInicioArt;
@@ -21,7 +22,7 @@ public class PanelArticulo extends JPanel {
 	protected JPanel alta = new AltaArticulo();
 	protected JPanel consulta = new ConsultaArticulo();
 	protected JPanel baja = new BajaArticulo();
-//	protected JPanel altaArt = new ParaAltaArticulo();
+	// protected JPanel alta = new ParaAltaArticulo();
 
 	/**
 	 * Create the panel.
@@ -92,18 +93,6 @@ public class PanelArticulo extends JPanel {
 		tabArt.setIconAt(0, iconoAlta);
 		tabArt.setIconAt(1, iconoConsulta);
 		tabArt.setIconAt(2, iconoBaja);
-
-		txtOpcionalesArt = new JTextField();
-		txtOpcionalesArt.setEditable(false);
-		txtOpcionalesArt.setColumns(10);
-		GridBagConstraints gbc_txtOpcionalesArt = new GridBagConstraints();
-		gbc_txtOpcionalesArt.anchor = GridBagConstraints.NORTH;
-		gbc_txtOpcionalesArt.gridwidth = 3;
-		gbc_txtOpcionalesArt.fill = GridBagConstraints.HORIZONTAL;
-		gbc_txtOpcionalesArt.insets = new Insets(0, 0, 5, 5);
-		gbc_txtOpcionalesArt.gridx = 1;
-		gbc_txtOpcionalesArt.gridy = 4;
-		panel.add(txtOpcionalesArt, gbc_txtOpcionalesArt);
 
 	}
 

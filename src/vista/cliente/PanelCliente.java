@@ -29,6 +29,7 @@ public class PanelCliente extends JPanel {
 	protected JTabbedPane tabCli;
 	protected JButton btnIconoCli;
 	protected JButton btnInicioCli;
+	
 	protected JPanel altaCli = new ParaAltaCliente();
 	protected JPanel consultaCli = new ParaConsultaCliente();
 	protected JPanel bajaCli = new ParaBajaCliente();

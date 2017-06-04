@@ -15,10 +15,10 @@ import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 
 public class ConsultaArticulo extends JPanel {
-	private JTextField textField;
-	private JTextField txtNombreArt;
-	private JTextField txtPrecioArt;
-	private JComboBox comboBoxArt;
+	protected JTextField textField;
+	protected JTextField txtNombreArt;
+	protected JTextField txtPrecioArt;
+	protected JComboBox comboArt;
 
 	/**
 	 * Create the panel.
@@ -41,9 +41,9 @@ public class ConsultaArticulo extends JPanel {
 		add(pnlConsultaArt, gbc_pnlConsultaArt);
 		GridBagLayout gbl_pnlConsultaArt = new GridBagLayout();
 		gbl_pnlConsultaArt.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0};
-		gbl_pnlConsultaArt.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_pnlConsultaArt.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
-		gbl_pnlConsultaArt.rowWeights = new double[]{1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
+		gbl_pnlConsultaArt.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_pnlConsultaArt.columnWeights = new double[]{1.0, 0.0, 0.0, 0.0, 1.0, 1.0, Double.MIN_VALUE};
+		gbl_pnlConsultaArt.rowWeights = new double[]{1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
 		pnlConsultaArt.setLayout(gbl_pnlConsultaArt);
 		
 		JLabel lblConsultaArt = new JLabel("Consulta Art\u00EDculo");
@@ -62,14 +62,14 @@ public class ConsultaArticulo extends JPanel {
 		gbc_lblSeleccioneArt.gridy = 1;
 		pnlConsultaArt.add(lblSeleccioneArt, gbc_lblSeleccioneArt);
 		
-		comboBoxArt = new JComboBox();
+		comboArt = new JComboBox();
 		GridBagConstraints gbc_comboBoxArt = new GridBagConstraints();
 		gbc_comboBoxArt.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBoxArt.gridwidth = 2;
 		gbc_comboBoxArt.insets = new Insets(0, 0, 5, 5);
 		gbc_comboBoxArt.gridx = 3;
 		gbc_comboBoxArt.gridy = 1;
-		pnlConsultaArt.add(comboBoxArt, gbc_comboBoxArt);
+		pnlConsultaArt.add(comboArt, gbc_comboBoxArt);
 		
 		JLabel lblNumRefeArt = new JLabel("Numero Referencia");
 		lblNumRefeArt.setHorizontalAlignment(SwingConstants.LEFT);
@@ -129,14 +129,14 @@ public class ConsultaArticulo extends JPanel {
 		JLabel lblDescripcin = new JLabel("Descripci\u00F3n");
 		GridBagConstraints gbc_lblDescripcin = new GridBagConstraints();
 		gbc_lblDescripcin.anchor = GridBagConstraints.EAST;
-		gbc_lblDescripcin.insets = new Insets(0, 0, 0, 5);
+		gbc_lblDescripcin.insets = new Insets(0, 0, 5, 5);
 		gbc_lblDescripcin.gridx = 2;
 		gbc_lblDescripcin.gridy = 6;
 		pnlConsultaArt.add(lblDescripcin, gbc_lblDescripcin);
 		
 		JScrollPane scrollPaneArt = new JScrollPane();
 		GridBagConstraints gbc_scrollPaneArt = new GridBagConstraints();
-		gbc_scrollPaneArt.insets = new Insets(0, 0, 0, 5);
+		gbc_scrollPaneArt.insets = new Insets(0, 0, 5, 5);
 		gbc_scrollPaneArt.fill = GridBagConstraints.BOTH;
 		gbc_scrollPaneArt.gridx = 4;
 		gbc_scrollPaneArt.gridy = 6;

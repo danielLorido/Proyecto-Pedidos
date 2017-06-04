@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
+import java.awt.Font;
 
 public class AltaArticulo extends JPanel {
 
@@ -22,6 +23,7 @@ public class AltaArticulo extends JPanel {
 	protected JTextArea textDescripcion;
 	protected JButton btnDarAlta;
 	protected JButton btnCancelar;
+	protected JTextField textAnomalia;
 
 	/**
 	 * Create the panel.
@@ -44,19 +46,10 @@ public class AltaArticulo extends JPanel {
 		add(pnlAltaCli, gbc_pnlAltaCli);
 		GridBagLayout gbl_pnlAltaCli = new GridBagLayout();
 		gbl_pnlAltaCli.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
-		gbl_pnlAltaCli.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
-		gbl_pnlAltaCli.columnWeights = new double[]{0.0, 0.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
-		gbl_pnlAltaCli.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
+		gbl_pnlAltaCli.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 27, 0};
+		gbl_pnlAltaCli.columnWeights = new double[]{1.0, 1.0, 3.0, 1.0, 1.0, Double.MIN_VALUE};
+		gbl_pnlAltaCli.rowWeights = new double[]{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
 		pnlAltaCli.setLayout(gbl_pnlAltaCli);
-		
-		JLabel lblAlta = new JLabel("Alta Articulos");
-		GridBagConstraints gbc_lblAlta = new GridBagConstraints();
-		gbc_lblAlta.fill = GridBagConstraints.VERTICAL;
-		gbc_lblAlta.gridwidth = 3;
-		gbc_lblAlta.insets = new Insets(0, 0, 5, 5);
-		gbc_lblAlta.gridx = 1;
-		gbc_lblAlta.gridy = 0;
-		pnlAltaCli.add(lblAlta, gbc_lblAlta);
 		
 		JLabel lblNumRef = new JLabel("N\u00FAmero de Referencia");
 		GridBagConstraints gbc_lblNumRef = new GridBagConstraints();
@@ -136,17 +129,28 @@ public class AltaArticulo extends JPanel {
 		
 		btnDarAlta = new JButton("Dar Alta");
 		GridBagConstraints gbc_btnDarAlta = new GridBagConstraints();
-		gbc_btnDarAlta.insets = new Insets(0, 0, 0, 5);
+		gbc_btnDarAlta.insets = new Insets(0, 0, 5, 5);
 		gbc_btnDarAlta.gridx = 2;
 		gbc_btnDarAlta.gridy = 5;
 		pnlAltaCli.add(btnDarAlta, gbc_btnDarAlta);
 		
 		btnCancelar = new JButton("Cancelar");
 		GridBagConstraints gbc_btnCancelar = new GridBagConstraints();
-		gbc_btnCancelar.insets = new Insets(0, 0, 0, 5);
+		gbc_btnCancelar.insets = new Insets(0, 0, 5, 5);
 		gbc_btnCancelar.gridx = 3;
 		gbc_btnCancelar.gridy = 5;
 		pnlAltaCli.add(btnCancelar, gbc_btnCancelar);
+		
+		textAnomalia = new JTextField();
+		textAnomalia.setEditable(false);
+		GridBagConstraints gbc_textAnomalia = new GridBagConstraints();
+		gbc_textAnomalia.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textAnomalia.gridwidth = 3;
+		gbc_textAnomalia.insets = new Insets(0, 0, 0, 5);
+		gbc_textAnomalia.gridx = 1;
+		gbc_textAnomalia.gridy = 6;
+		pnlAltaCli.add(textAnomalia, gbc_textAnomalia);
+		textAnomalia.setColumns(10);
 
 	}
 }
