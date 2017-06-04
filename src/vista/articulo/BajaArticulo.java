@@ -47,7 +47,7 @@ public class BajaArticulo extends JPanel {
 		GridBagLayout gbl_pnlConsultaArt = new GridBagLayout();
 		gbl_pnlConsultaArt.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0};
 		gbl_pnlConsultaArt.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_pnlConsultaArt.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
+		gbl_pnlConsultaArt.columnWeights = new double[]{1.0, 0.0, 0.0, 0.0, 3.0, 1.0, Double.MIN_VALUE};
 		gbl_pnlConsultaArt.rowWeights = new double[]{1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE};
 		pnlConsultaArt.setLayout(gbl_pnlConsultaArt);
 		
