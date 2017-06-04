@@ -17,12 +17,13 @@ import javax.swing.JTable;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class AltaPedido extends JPanel {
 	protected JTextField textId;
 	protected JTable table;
 	protected JComboBox<Cliente> comboCliente;
-	protected JComboBox<Articulo> comboArticulo;
 	protected JLabel lblTotal;
 
 	public AltaPedido() {
@@ -65,30 +66,24 @@ public class AltaPedido extends JPanel {
 		gbc_textId.gridy = 2;
 		add(textId, gbc_textId);
 		textId.setColumns(10);
-
-		JLabel lblSeleccioneUnArticulo = new JLabel("Seleccione un art\u00EDculo");
-		GridBagConstraints gbc_lblSeleccioneUnArticulo = new GridBagConstraints();
-		gbc_lblSeleccioneUnArticulo.anchor = GridBagConstraints.EAST;
-		gbc_lblSeleccioneUnArticulo.insets = new Insets(0, 0, 5, 5);
-		gbc_lblSeleccioneUnArticulo.gridx = 1;
-		gbc_lblSeleccioneUnArticulo.gridy = 3;
-		add(lblSeleccioneUnArticulo, gbc_lblSeleccioneUnArticulo);
-
-		comboArticulo = new JComboBox();
-		GridBagConstraints gbc_comboArticulo = new GridBagConstraints();
-		gbc_comboArticulo.gridwidth = 2;
-		gbc_comboArticulo.insets = new Insets(0, 0, 5, 5);
-		gbc_comboArticulo.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboArticulo.gridx = 2;
-		gbc_comboArticulo.gridy = 3;
-		add(comboArticulo, gbc_comboArticulo);
 		
-		JButton button = new JButton("+");
-		GridBagConstraints gbc_button = new GridBagConstraints();
-		gbc_button.insets = new Insets(0, 0, 5, 5);
-		gbc_button.gridx = 4;
-		gbc_button.gridy = 3;
-		add(button, gbc_button);
+		JButton btnAnadir = new JButton("A\u00F1adir linea");
+		btnAnadir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		GridBagConstraints gbc_btnAnadir = new GridBagConstraints();
+		gbc_btnAnadir.insets = new Insets(0, 0, 5, 5);
+		gbc_btnAnadir.gridx = 1;
+		gbc_btnAnadir.gridy = 3;
+		add(btnAnadir, gbc_btnAnadir);
+		
+		JButton btnEliminar = new JButton("Eliminar linea");
+		GridBagConstraints gbc_btnEliminar = new GridBagConstraints();
+		gbc_btnEliminar.insets = new Insets(0, 0, 5, 5);
+		gbc_btnEliminar.gridx = 2;
+		gbc_btnEliminar.gridy = 3;
+		add(btnEliminar, gbc_btnEliminar);
 
 		JScrollPane scrollPane = new JScrollPane();
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
