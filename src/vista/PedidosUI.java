@@ -27,7 +27,7 @@ public class PedidosUI extends JFrame {
 	public JPanel pnlClientes = new PanelCliente();
 	public JPanel pnlPedidos = new PanelPedidos();
 
-	protected JPanel contentPane;
+	public JPanel contentPane;
 	protected JButton btnCliente;
 	protected JButton btnArticulo;
 	protected JButton btnPedidos;

@@ -1,10 +1,6 @@
 package control.comportamiento;
 
 import vista.PedidosUI;
-import vista.articulo.PanelArticulo;
-import vista.cliente.PanelCliente;
-import vista.pedido.PanelPedidos;
-
 import java.awt.event.ActionListener;
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
