@@ -13,13 +13,14 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
 import control.comportamiento.ParaAltaArticulo;
+import control.comportamiento.ParaConsultaArticulo;
 
 public class PanelArticulo extends JPanel {
 	protected JTabbedPane tabArt;
 	protected JButton btnInicioArt;
 
 	protected JPanel alta = new ParaAltaArticulo();
-	protected JPanel consulta = new ConsultaArticulo();
+	protected JPanel consulta = new ParaConsultaArticulo();
 	protected JPanel baja = new BajaArticulo();
 	private JLabel lblIcono;
 	// protected JPanel alta = new ParaAltaArticulo();
