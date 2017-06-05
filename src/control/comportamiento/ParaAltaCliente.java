@@ -6,6 +6,7 @@ import vista.cliente.PanelCliente;
 import java.awt.event.ActionListener;
 
 import control.logica.Gestor;
+import control.logica.GestorCliente;
 import modelo.Cliente;
 
 import java.awt.Color;
@@ -26,7 +27,8 @@ public class ParaAltaCliente extends AltaCliente {
 						if (apellidoCli.length() >= 2) {
 							if (direccionCli.length() >= 3) {
 								Cliente cliente = new Cliente(dniCli, nombreCli, apellidoCli, direccionCli);
-								new Gestor().insertar(cliente);
+								new GestorCliente().escribeObjeto(cliente);
+								
 								txtOpcionalesCli.setForeground(Color.GREEN);
 								txtOpcionalesCli.setText("Cliente Insertado correctamente");
 							} else {
@@ -51,6 +53,7 @@ public class ParaAltaCliente extends AltaCliente {
 				txtNombre.setText("");
 				txtApellido.setText("");
 				txtDireccion.setText("");
+				txtOpcionalesCli.setForeground(Color.RED);
 				txtOpcionalesCli.setText("Alta Cancelada");
 			}
 		});
