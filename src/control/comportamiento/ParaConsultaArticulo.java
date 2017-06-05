@@ -19,26 +19,30 @@ public class ParaConsultaArticulo extends ConsultaArticulo {
 
 	public ParaConsultaArticulo() {
 
-		// DefaultComboBoxModel<Articulo> modelo = new
-		// DefaultComboBoxModel<Articulo>();
 		rellenarCombo();
 
-		// comboArt.addActionListener(new ActionListener() {
-		// public void actionPerformed(ActionEvent arg0) {
-		// Articulo art = (Articulo) comboArt.getSelectedItem();
-		// txtPrecioArt.setText(String.valueOf(art.getPrecio()));
-		//
-		// }
-		// });
+		comboArt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Articulo art = (Articulo) comboArt.getSelectedItem();
+				txtPrecioArt.setText(String.valueOf(art.getPrecio()));
+				txtNombreArt.setText(art.getNombre());
+				txtNumRef.setText(String.valueOf(art.getNumReferencia()));
+				txtDescripcionArt.setText(art.getDescripcion());
+			}
+		});
 
 	}
 
 	private void rellenarCombo() {
-		HashSet<Articulo> articulos = new GestorAltaArticulo().getListaArticulos();
+
+		DefaultComboBoxModel<Articulo> modelo = new DefaultComboBoxModel<Articulo>();
+
+		HashSet<Articulo> articulos = new GestorAltaArticulo().getListaArt();
 
 		for (Articulo articulo : articulos) {
-			comboArt.insertItemAt(articulo, 0);
+			modelo.addElement(articulo);
 		}
+		comboArt.setModel(modelo);
 	}
 
 }

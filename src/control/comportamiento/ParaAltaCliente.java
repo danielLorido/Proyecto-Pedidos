@@ -28,6 +28,7 @@ public class ParaAltaCliente extends AltaCliente {
 							if (direccionCli.length() >= 3) {
 								Cliente cliente = new Cliente(dniCli, nombreCli, apellidoCli, direccionCli);
 								new GestorCliente().escribeObjeto(cliente);
+//								new Gestor().insertar(cliente);
 								
 								txtOpcionalesCli.setForeground(Color.GREEN);
 								txtOpcionalesCli.setText("Cliente Insertado correctamente");
