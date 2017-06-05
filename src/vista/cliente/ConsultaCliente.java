@@ -20,7 +20,6 @@ public class ConsultaCliente extends JPanel {
 	protected JTextField txtNombre;
 	protected JTextField txtApellido;
 	protected JTextField txtDireccion;
-	protected JButton btnBuscaCli;
 	protected JComboBox comboBox;
 
 	/**
@@ -43,16 +42,16 @@ public class ConsultaCliente extends JPanel {
 		gbc_pnlConsultaCli.gridy = 0;
 		add(pnlConsultaCli, gbc_pnlConsultaCli);
 		GridBagLayout gbl_pnlConsultaCli = new GridBagLayout();
-		gbl_pnlConsultaCli.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_pnlConsultaCli.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_pnlConsultaCli.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_pnlConsultaCli.columnWeights = new double[]{1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, Double.MIN_VALUE};
+		gbl_pnlConsultaCli.columnWeights = new double[]{1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, Double.MIN_VALUE};
 		gbl_pnlConsultaCli.rowWeights = new double[]{1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
 		pnlConsultaCli.setLayout(gbl_pnlConsultaCli);
 		
 		JLabel lblConsulta = new JLabel("Consulta Cliente");
 		GridBagConstraints gbc_lblConsulta = new GridBagConstraints();
-		gbc_lblConsulta.gridwidth = 9;
-		gbc_lblConsulta.insets = new Insets(0, 0, 5, 5);
+		gbc_lblConsulta.gridwidth = 8;
+		gbc_lblConsulta.insets = new Insets(0, 0, 5, 0);
 		gbc_lblConsulta.gridx = 0;
 		gbc_lblConsulta.gridy = 0;
 		pnlConsultaCli.add(lblConsulta, gbc_lblConsulta);
@@ -74,15 +73,6 @@ public class ConsultaCliente extends JPanel {
 		gbc_comboBox.gridy = 1;
 		pnlConsultaCli.add(comboBox, gbc_comboBox);
 		ImageIcon iconoBtn = new ImageIcon("/iconos/lupa.png");
-		
-		btnBuscaCli = new JButton("");
-		GridBagConstraints gbc_btnBuscaCli = new GridBagConstraints();
-		gbc_btnBuscaCli.fill = GridBagConstraints.BOTH;
-		gbc_btnBuscaCli.insets = new Insets(0, 0, 5, 5);
-		gbc_btnBuscaCli.gridx = 7;
-		gbc_btnBuscaCli.gridy = 1;
-		btnBuscaCli.setIcon(iconoBtn);
-		pnlConsultaCli.add(btnBuscaCli, gbc_btnBuscaCli);
 		
 		JLabel lblDni = new JLabel("Dni");
 		lblDni.setHorizontalAlignment(SwingConstants.LEFT);

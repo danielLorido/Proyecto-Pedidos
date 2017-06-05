@@ -18,20 +18,13 @@ public class ParaConsultaCliente extends ConsultaCliente {
 		// Tengo que rellenar el combo
 		rellenarCombo();
 
-		btnBuscaCli.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				// Obtiene el cliente que está en el comboBox selleccionado y
-				// muestra la información en los txt
-
-				String dniCli = "", nombreCli = "", apellidoCli = "", direccionCli = "";
-				// Obtengo los valores para ese cliente
-
-				// // Los muestro en el formulario
-				txtDni.setText(dniCli);
-				txtNombre.setText(nombreCli);
-				txtApellido.setText(apellidoCli);
-				txtDireccion.setText(direccionCli);
-
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Cliente cli = (Cliente) comboBox.getSelectedItem();
+				txtDni.setText(cli.getDni());
+				txtNombre.setText(cli.getNombre());
+				txtApellido.setText(cli.getApellido());
+				txtDireccion.setText(cli.getDireccion());
 			}
 		});
 	}
@@ -42,9 +35,10 @@ public class ParaConsultaCliente extends ConsultaCliente {
 	 */
 	private void rellenarCombo() {
 		DefaultComboBoxModel<Cliente> modelo = new DefaultComboBoxModel<Cliente>();
+
 		HashSet<Cliente> clientes = new GestorCliente().getListaCli();
 
-		for (Cliente cliente : clientes) {
+		for (Cliente cliente: clientes) {
 			modelo.addElement(cliente);
 		}
 		comboBox.setModel(modelo);
