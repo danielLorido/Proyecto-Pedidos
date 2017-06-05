@@ -84,7 +84,7 @@ public class ParaAltaArticulo extends AltaArticulo {
 	 */
 	private boolean comprobarAlfabetico(String texto) {
 		for (int j = 0; j < texto.length(); j++) {
-			if (Character.isAlphabetic(texto.charAt(j))) {
+			if (Character.isAlphabetic(texto.charAt(j)) || texto.charAt(j) == ' ') {
 				ok = true;
 			} else {
 				return false;
