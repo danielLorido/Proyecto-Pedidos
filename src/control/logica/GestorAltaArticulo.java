@@ -6,42 +6,41 @@ import java.util.HashSet;
 
 import control.adaptador.GestorUnificado;
 import modelo.Articulo;
+import modelo.Cliente;
+import modelo.DAO;
+import utiles.Constantes;
 import utiles.Tipo;
 
 public class GestorAltaArticulo {
+	private HashSet<Articulo> listaArt;
 
-	private HashSet<Articulo> listillo;
-
+	@SuppressWarnings("unchecked")
 	public GestorAltaArticulo() {
 		if (new File("articulos.dat").exists()) {
-			listillo = (HashSet<Articulo>) new GestorUnificado(Tipo.articulo).obtener();
-
+			listaArt = (HashSet<Articulo>) new GestorUnificado(Tipo.articulo).obtener();
+		} else {
 			try {
 				new File("articulos.dat").createNewFile();
-				listillo = new HashSet<Articulo>();
+				listaArt = new HashSet<Articulo>();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				if (Constantes.errores) {
+					System.out.println("No se ha podido crear el archivo");
+				}
 			}
-
 		}
 	}
 
-	public HashSet<Articulo> getListaArticulos() {
-		return listillo;
+	public HashSet<Articulo> getListaArt() {
+		return listaArt;
 	}
 
-	public HashSet<Articulo> getListillo() {
-		return listillo;
-	}
-
-	public void setListillo(HashSet<Articulo> listillo) {
-		this.listillo = listillo;
+	public void setListaArt(HashSet<Articulo> listaArt) {
+		this.listaArt = listaArt;
 	}
 
 	public boolean escribeObjeto(Articulo articulo) {
-		listillo.add(articulo);
-		return new GestorUnificado(Tipo.articulo).escribir(listillo);
+		listaArt.add(articulo);
+		return new GestorUnificado(Tipo.articulo).escribir(listaArt);
 	}
 
 }

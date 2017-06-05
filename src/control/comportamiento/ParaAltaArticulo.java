@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.util.HashSet;
 
 import control.logica.Gestor;
+import control.logica.GestorAltaArticulo;
 import modelo.Articulo;
 
 import java.awt.Color;
@@ -18,6 +19,10 @@ public class ParaAltaArticulo extends AltaArticulo {
 	public ParaAltaArticulo() {
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				txtNumRef.setText("");
+				txtNombre.setText("");
+				textDescripcion.setText("");
+				txtPrecio.setText("");
 			}
 		});
 		btnDarAlta.addActionListener(new ActionListener() {
@@ -30,17 +35,16 @@ public class ParaAltaArticulo extends AltaArticulo {
 				textAnomalia.setForeground(Color.red);
 
 				if (comprobarNumerico(numRef) && numRef.length() >= 4) {
-
 					if (comprobarAlfabetico(nombre) && nombre.length() > 2) {
-
 						if (comprobarNumerico(precio)) {
-
 							if (comprobarAlfabetico(descripcion) && descripcion.length() > 5) {
-
+								
+								
 								Articulo miArticulo = new Articulo(Integer.valueOf(numRef), nombre, descripcion,
 										Float.valueOf(precio));
-								// artList.add(miArticulo);
-								new Gestor().insertar(miArticulo);
+								new GestorAltaArticulo().escribeObjeto(miArticulo);
+								
+								
 								textAnomalia.setForeground(Color.green);
 								textAnomalia.setText("Articulo creado correctamente");
 							} else {
@@ -55,7 +59,6 @@ public class ParaAltaArticulo extends AltaArticulo {
 				} else {
 					textAnomalia.setText("error: numref");
 				}
-
 			}
 		});
 

@@ -15,10 +15,11 @@ import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 
 public class ConsultaArticulo extends JPanel {
-	protected JTextField textField;
+	protected JTextField txtNumRef;
 	protected JTextField txtNombreArt;
 	protected JTextField txtPrecioArt;
 	protected JComboBox comboArt;
+	protected JTextArea txtDescripcionArt;
 
 	/**
 	 * Create the panel.
@@ -80,15 +81,15 @@ public class ConsultaArticulo extends JPanel {
 		gbc_lblNumRefeArt.gridy = 3;
 		pnlConsultaArt.add(lblNumRefeArt, gbc_lblNumRefeArt);
 		
-		textField = new JTextField();
-		textField.setEditable(false);
-		textField.setColumns(10);
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField.insets = new Insets(0, 0, 5, 5);
-		gbc_textField.gridx = 4;
-		gbc_textField.gridy = 3;
-		pnlConsultaArt.add(textField, gbc_textField);
+		txtNumRef = new JTextField();
+		txtNumRef.setEditable(false);
+		txtNumRef.setColumns(10);
+		GridBagConstraints gbc_txtNumRef = new GridBagConstraints();
+		gbc_txtNumRef.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtNumRef.insets = new Insets(0, 0, 5, 5);
+		gbc_txtNumRef.gridx = 4;
+		gbc_txtNumRef.gridy = 3;
+		pnlConsultaArt.add(txtNumRef, gbc_txtNumRef);
 		
 		JLabel lblNombreArt = new JLabel("Nombre");
 		GridBagConstraints gbc_lblNombreArt = new GridBagConstraints();
@@ -142,7 +143,7 @@ public class ConsultaArticulo extends JPanel {
 		gbc_scrollPaneArt.gridy = 6;
 		pnlConsultaArt.add(scrollPaneArt, gbc_scrollPaneArt);
 		
-		JTextArea txtDescripcionArt = new JTextArea();
+		txtDescripcionArt = new JTextArea();
 		txtDescripcionArt.setEditable(false);
 		scrollPaneArt.setViewportView(txtDescripcionArt);
 
