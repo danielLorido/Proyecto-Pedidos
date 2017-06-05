@@ -27,12 +27,12 @@ import java.awt.CardLayout;
 
 public class PanelCliente extends JPanel {
 	protected JTabbedPane tabCli;
-	protected JButton btnIconoCli;
 	protected JButton btnInicioCli;
 	
 	protected JPanel altaCli = new ParaAltaCliente();
 	protected JPanel consultaCli = new ParaConsultaCliente();
 	protected JPanel bajaCli = new ParaBajaCliente();
+	private JLabel lblIcono;
 
 	/**
 	 * Create the panel.
@@ -59,7 +59,7 @@ public class PanelCliente extends JPanel {
 		gbl_panel.rowWeights = new double[] { 1.0, 1.0, 10.0, 1.0, Double.MIN_VALUE };
 		panel.setLayout(gbl_panel);
 
-		btnInicioCli = new JButton("<- Inicio");
+		btnInicioCli = new JButton("Inicio");
 		GridBagConstraints gbc_btnInicioArt = new GridBagConstraints();
 		gbc_btnInicioArt.anchor = GridBagConstraints.SOUTHWEST;
 		gbc_btnInicioArt.insets = new Insets(0, 0, 5, 5);
@@ -74,14 +74,14 @@ public class PanelCliente extends JPanel {
 		gbc_lblSecCli.gridx = 2;
 		gbc_lblSecCli.gridy = 0;
 		panel.add(lblSecCli, gbc_lblSecCli);
-
-		btnIconoCli = new JButton("Icono");
-		GridBagConstraints gbc_btnIconoArt = new GridBagConstraints();
-		gbc_btnIconoArt.anchor = GridBagConstraints.SOUTHEAST;
-		gbc_btnIconoArt.insets = new Insets(0, 0, 5, 5);
-		gbc_btnIconoArt.gridx = 3;
-		gbc_btnIconoArt.gridy = 0;
-		panel.add(btnIconoCli, gbc_btnIconoArt);
+		
+		lblIcono = new JLabel("");
+		GridBagConstraints gbc_lblIcono = new GridBagConstraints();
+		gbc_lblIcono.anchor = GridBagConstraints.SOUTH;
+		gbc_lblIcono.insets = new Insets(0, 0, 5, 5);
+		gbc_lblIcono.gridx = 3;
+		gbc_lblIcono.gridy = 0;
+		panel.add(lblIcono, gbc_lblIcono);
 
 		tabCli = new JTabbedPane(JTabbedPane.TOP);
 		GridBagConstraints gbc_tabCli = new GridBagConstraints();
@@ -96,10 +96,14 @@ public class PanelCliente extends JPanel {
 		tabCli.addTab("Consulta", consultaCli);
 		tabCli.addTab("Baja", bajaCli);
 		
+		Icon iconoInicio = new ImageIcon(getClass().getResource("/iconos/inicio.png"));
+		Icon iconoCliente = new ImageIcon(getClass().getResource("/iconos/clientes.png"));
 		Icon iconoAlta = new ImageIcon(getClass().getResource("/iconos/altas.png"));
 		Icon iconoConsulta = new ImageIcon(getClass().getResource("/iconos/consultas.png"));
 		Icon iconoBaja = new ImageIcon(getClass().getResource("/iconos/bajas.png"));
 
+		btnInicioCli.setIcon(iconoInicio);
+		lblIcono.setIcon(iconoCliente);
 		tabCli.setIconAt(0, iconoAlta);
 		tabCli.setIconAt(1, iconoConsulta);
 		tabCli.setIconAt(2, iconoBaja);
