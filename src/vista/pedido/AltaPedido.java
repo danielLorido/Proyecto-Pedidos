@@ -29,9 +29,9 @@ public class AltaPedido extends JPanel {
 	public AltaPedido() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 0, 0, 0, 0, 0, 0, 0 };
-		gridBagLayout.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-		gridBagLayout.columnWeights = new double[] { 0.0, 2.0, 2.0, 1.0, 0.0, 0.0, Double.MIN_VALUE };
-		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE };
+		gridBagLayout.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+		gridBagLayout.columnWeights = new double[] { 0.0, 2.0, 1.0, 1.0, 0.0, 0.0, Double.MIN_VALUE };
+		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE };
 		setLayout(gridBagLayout);
 
 		JLabel lblIdpedido = new JLabel("IdPedido");
@@ -72,17 +72,34 @@ public class AltaPedido extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
+		
+		JLabel lblSeleccioneUnArticulo = new JLabel("Seleccione un Articulo");
+		GridBagConstraints gbc_lblSeleccioneUnArticulo = new GridBagConstraints();
+		gbc_lblSeleccioneUnArticulo.anchor = GridBagConstraints.EAST;
+		gbc_lblSeleccioneUnArticulo.insets = new Insets(0, 0, 5, 5);
+		gbc_lblSeleccioneUnArticulo.gridx = 1;
+		gbc_lblSeleccioneUnArticulo.gridy = 3;
+		add(lblSeleccioneUnArticulo, gbc_lblSeleccioneUnArticulo);
+		
+		JComboBox comboBox = new JComboBox();
+		GridBagConstraints gbc_comboBox = new GridBagConstraints();
+		gbc_comboBox.gridwidth = 3;
+		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
+		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
+		gbc_comboBox.gridx = 2;
+		gbc_comboBox.gridy = 3;
+		add(comboBox, gbc_comboBox);
 		GridBagConstraints gbc_btnAnadir = new GridBagConstraints();
 		gbc_btnAnadir.insets = new Insets(0, 0, 5, 5);
 		gbc_btnAnadir.gridx = 1;
-		gbc_btnAnadir.gridy = 3;
+		gbc_btnAnadir.gridy = 4;
 		add(btnAnadir, gbc_btnAnadir);
 		
 		JButton btnEliminar = new JButton("Eliminar linea");
 		GridBagConstraints gbc_btnEliminar = new GridBagConstraints();
 		gbc_btnEliminar.insets = new Insets(0, 0, 5, 5);
 		gbc_btnEliminar.gridx = 2;
-		gbc_btnEliminar.gridy = 3;
+		gbc_btnEliminar.gridy = 4;
 		add(btnEliminar, gbc_btnEliminar);
 
 		JScrollPane scrollPane = new JScrollPane();
@@ -92,7 +109,7 @@ public class AltaPedido extends JPanel {
 		gbc_scrollPane.insets = new Insets(0, 0, 5, 5);
 		gbc_scrollPane.fill = GridBagConstraints.BOTH;
 		gbc_scrollPane.gridx = 1;
-		gbc_scrollPane.gridy = 4;
+		gbc_scrollPane.gridy = 5;
 		add(scrollPane, gbc_scrollPane);
 
 		table = new JTable();
@@ -118,7 +135,7 @@ public class AltaPedido extends JPanel {
 		gbc_btnNewButton.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
 		gbc_btnNewButton.gridx = 1;
-		gbc_btnNewButton.gridy = 6;
+		gbc_btnNewButton.gridy = 7;
 		add(btnNewButton, gbc_btnNewButton);
 
 		JButton btnCancelarPedido = new JButton("Cancelar Pedido");
@@ -126,7 +143,7 @@ public class AltaPedido extends JPanel {
 		gbc_btnCancelarPedido.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnCancelarPedido.insets = new Insets(0, 0, 5, 5);
 		gbc_btnCancelarPedido.gridx = 2;
-		gbc_btnCancelarPedido.gridy = 6;
+		gbc_btnCancelarPedido.gridy = 7;
 		add(btnCancelarPedido, gbc_btnCancelarPedido);
 
 		JLabel lbl = new JLabel("Total");
@@ -135,7 +152,7 @@ public class AltaPedido extends JPanel {
 		GridBagConstraints gbc_lbl = new GridBagConstraints();
 		gbc_lbl.insets = new Insets(0, 0, 5, 5);
 		gbc_lbl.gridx = 3;
-		gbc_lbl.gridy = 6;
+		gbc_lbl.gridy = 7;
 		add(lbl, gbc_lbl);
 
 		lblTotal = new JLabel("");
@@ -144,7 +161,7 @@ public class AltaPedido extends JPanel {
 		gbc_lblTotal.fill = GridBagConstraints.HORIZONTAL;
 		gbc_lblTotal.insets = new Insets(0, 0, 5, 5);
 		gbc_lblTotal.gridx = 4;
-		gbc_lblTotal.gridy = 6;
+		gbc_lblTotal.gridy = 7;
 		add(lblTotal, gbc_lblTotal);
 
 	}

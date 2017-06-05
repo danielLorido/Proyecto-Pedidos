@@ -16,12 +16,12 @@ import control.comportamiento.ParaAltaArticulo;
 
 public class PanelArticulo extends JPanel {
 	protected JTabbedPane tabArt;
-	protected JButton btnIconoArt;
 	protected JButton btnInicioArt;
 
 	protected JPanel alta = new ParaAltaArticulo();
 	protected JPanel consulta = new ConsultaArticulo();
 	protected JPanel baja = new BajaArticulo();
+	private JLabel lblIcono;
 	// protected JPanel alta = new ParaAltaArticulo();
 
 	/**
@@ -49,7 +49,7 @@ public class PanelArticulo extends JPanel {
 		gbl_panel.rowWeights = new double[] { 1.0, 1.0, 10.0, 1.0, 0.0, 1.0, Double.MIN_VALUE };
 		panel.setLayout(gbl_panel);
 
-		btnInicioArt = new JButton("<- Inicio");
+		btnInicioArt = new JButton("   Inicio");
 		GridBagConstraints gbc_btnInicioArt = new GridBagConstraints();
 		gbc_btnInicioArt.anchor = GridBagConstraints.SOUTHWEST;
 		gbc_btnInicioArt.insets = new Insets(0, 0, 5, 5);
@@ -64,14 +64,14 @@ public class PanelArticulo extends JPanel {
 		gbc_lblSecArt.gridx = 2;
 		gbc_lblSecArt.gridy = 0;
 		panel.add(lblSecArt, gbc_lblSecArt);
-
-		btnIconoArt = new JButton("Icono");
-		GridBagConstraints gbc_btnIconoArt = new GridBagConstraints();
-		gbc_btnIconoArt.anchor = GridBagConstraints.SOUTHEAST;
-		gbc_btnIconoArt.insets = new Insets(0, 0, 5, 5);
-		gbc_btnIconoArt.gridx = 3;
-		gbc_btnIconoArt.gridy = 0;
-		panel.add(btnIconoArt, gbc_btnIconoArt);
+		
+		lblIcono = new JLabel("");
+		GridBagConstraints gbc_lblIcono = new GridBagConstraints();
+		gbc_lblIcono.anchor = GridBagConstraints.SOUTH;
+		gbc_lblIcono.insets = new Insets(0, 0, 5, 5);
+		gbc_lblIcono.gridx = 3;
+		gbc_lblIcono.gridy = 0;
+		panel.add(lblIcono, gbc_lblIcono);
 
 		tabArt = new JTabbedPane(JTabbedPane.TOP);
 		GridBagConstraints gbc_tabArt = new GridBagConstraints();
@@ -86,10 +86,14 @@ public class PanelArticulo extends JPanel {
 		tabArt.addTab("Consulta", consulta);
 		tabArt.add("Baja", baja);
 
+		Icon iconoInicio = new ImageIcon(getClass().getResource("/iconos/inicio.png"));
+		Icon iconoArticulo = new ImageIcon(getClass().getResource("/iconos/articulos.png"));
 		Icon iconoAlta = new ImageIcon(getClass().getResource("/iconos/altas.png"));
 		Icon iconoConsulta = new ImageIcon(getClass().getResource("/iconos/consultas.png"));
 		Icon iconoBaja = new ImageIcon(getClass().getResource("/iconos/bajas.png"));
 
+		btnInicioArt.setIcon(iconoInicio);
+		lblIcono.setIcon(iconoArticulo);
 		tabArt.setIconAt(0, iconoAlta);
 		tabArt.setIconAt(1, iconoConsulta);
 		tabArt.setIconAt(2, iconoBaja);

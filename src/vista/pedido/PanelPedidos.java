@@ -16,10 +16,10 @@ public class PanelPedidos extends JPanel {
 	
 	protected JTextField txtOpcionalesPed;
 	protected JTabbedPane tabPed;
-	protected JButton btnIconoPed;
 	protected JButton btnInicioPed;
 	protected JPanel AltaPedido = new AltaPedido();
 	protected JPanel ConsultaPedido = new ConsultaPedido();
+	private JLabel lblIcono;
 
 	/**
 	 * Create the panel.
@@ -45,7 +45,7 @@ public class PanelPedidos extends JPanel {
 		gbl_panel.rowWeights = new double[] { 1.0, 1.0, 10.0, 1.0, 0.0, 1.0, Double.MIN_VALUE };
 		panel.setLayout(gbl_panel);
 
-		btnInicioPed = new JButton("<- Inicio");
+		btnInicioPed = new JButton("Inicio");
 		GridBagConstraints gbc_btnInicioArt = new GridBagConstraints();
 		gbc_btnInicioArt.anchor = GridBagConstraints.SOUTHWEST;
 		gbc_btnInicioArt.insets = new Insets(0, 0, 5, 5);
@@ -60,14 +60,13 @@ public class PanelPedidos extends JPanel {
 		gbc_lblSecPed.gridx = 2;
 		gbc_lblSecPed.gridy = 0;
 		panel.add(lblSecPed, gbc_lblSecPed);
-
-		btnIconoPed = new JButton("Icono");
-		GridBagConstraints gbc_btnIconoArt = new GridBagConstraints();
-		gbc_btnIconoArt.anchor = GridBagConstraints.SOUTHEAST;
-		gbc_btnIconoArt.insets = new Insets(0, 0, 5, 5);
-		gbc_btnIconoArt.gridx = 3;
-		gbc_btnIconoArt.gridy = 0;
-		panel.add(btnIconoPed, gbc_btnIconoArt);
+		
+		lblIcono = new JLabel("");
+		GridBagConstraints gbc_lblIcono = new GridBagConstraints();
+		gbc_lblIcono.insets = new Insets(0, 0, 5, 5);
+		gbc_lblIcono.gridx = 3;
+		gbc_lblIcono.gridy = 0;
+		panel.add(lblIcono, gbc_lblIcono);
 
 		tabPed = new JTabbedPane(JTabbedPane.TOP);
 		GridBagConstraints gbc_tabArt = new GridBagConstraints();
@@ -78,9 +77,14 @@ public class PanelPedidos extends JPanel {
 		gbc_tabArt.gridy = 2;
 		panel.add(tabPed, gbc_tabArt);
 		
+		Icon iconoInicio = new ImageIcon(getClass().getResource("/iconos/inicio.png"));
+		Icon iconoPedido = new ImageIcon(getClass().getResource("/iconos/pedidos.png"));
 		Icon iconoAlta = new ImageIcon(getClass().getResource("/iconos/altas.png"));
 		Icon iconoConsulta = new ImageIcon(getClass().getResource("/iconos/consultas.png"));
 
+		
+		btnInicioPed.setIcon(iconoInicio);
+		lblIcono.setIcon(iconoPedido);
 		tabPed.addTab("Alta",AltaPedido);
 		tabPed.setIconAt(0,iconoAlta);
 		tabPed.addTab("Consulta",ConsultaPedido);
