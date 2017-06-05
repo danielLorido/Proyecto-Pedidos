@@ -15,18 +15,14 @@ public class GestorAltaArticulo {
 	private HashSet<Articulo> listaArt;
 
 	@SuppressWarnings("unchecked")
+
+	File filete = new File("articulos.dat");
+
 	public GestorAltaArticulo() {
-		if (new File("articulos.dat").exists()) {
+		if (filete.exists()) {
 			listaArt = (HashSet<Articulo>) new GestorUnificado(Tipo.articulo).obtener();
 		} else {
-			try {
-				new File("articulos.dat").createNewFile();
-				listaArt = new HashSet<Articulo>();
-			} catch (IOException e) {
-				if (Constantes.errores) {
-					System.out.println("No se ha podido crear el archivo");
-				}
-			}
+			listaArt = new HashSet<Articulo>();
 		}
 	}
 

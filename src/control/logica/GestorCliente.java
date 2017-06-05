@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.HashSet;
 
 import control.adaptador.GestorUnificado;
+import modelo.Articulo;
 import modelo.Cliente;
 import modelo.DAO;
 import utiles.Constantes;
@@ -18,14 +19,7 @@ public class GestorCliente {
 		if (new File("clientes.dat").exists()) {
 			listaCli = (HashSet<Cliente>) new GestorUnificado(Tipo.cliente).obtener();
 		} else {
-			try {
-				new File("clientes.dat").createNewFile();
-				listaCli = new HashSet<Cliente>();
-			} catch (IOException e) {
-				if (Constantes.errores) {
-					System.out.println("No se ha podido crear el archivo");
-				}
-			}
+			listaCli = new HashSet<Cliente>();
 		}
 	}
 
