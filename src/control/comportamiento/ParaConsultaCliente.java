@@ -6,9 +6,7 @@ import java.util.HashSet;
 
 import javax.swing.DefaultComboBoxModel;
 
-import control.logica.GestorAltaArticulo;
 import control.logica.GestorCliente;
-import modelo.Articulo;
 import modelo.Cliente;
 
 import java.awt.event.ActionEvent;

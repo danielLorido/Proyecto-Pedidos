@@ -2,13 +2,9 @@ package control.comportamiento;
 
 import vista.cliente.AltaCliente;
 import vista.cliente.PanelCliente;
-
 import java.awt.event.ActionListener;
-
-import control.logica.Gestor;
 import control.logica.GestorCliente;
 import modelo.Cliente;
-
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 
@@ -28,8 +24,7 @@ public class ParaAltaCliente extends AltaCliente {
 							if (direccionCli.length() >= 3) {
 								Cliente cliente = new Cliente(dniCli, nombreCli, apellidoCli, direccionCli);
 								new GestorCliente().escribeObjeto(cliente);
-//								new Gestor().insertar(cliente);
-								
+
 								txtOpcionalesCli.setForeground(Color.GREEN);
 								txtOpcionalesCli.setText("Cliente Insertado correctamente");
 							} else {

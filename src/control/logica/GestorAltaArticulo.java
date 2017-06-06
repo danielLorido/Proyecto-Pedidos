@@ -15,8 +15,11 @@ public class GestorAltaArticulo {
 	private HashSet<Articulo> listaArt;
 
 	@SuppressWarnings("unchecked")
+
+	File filete = new File("articulos.dat");
+
 	public GestorAltaArticulo() {
-		if (new File("articulos.dat").exists()) {
+		if (filete.exists()) {
 			listaArt = (HashSet<Articulo>) new GestorUnificado(Tipo.articulo).obtener();
 		} else {
 			listaArt = new HashSet<Articulo>();
