@@ -3,6 +3,7 @@ package control.comportamiento;
 import vista.PedidosUI;
 import java.awt.event.ActionListener;
 import java.awt.CardLayout;
+import java.awt.Container;
 import java.awt.event.ActionEvent;
 
 public class ParaPedidosUI extends PedidosUI {
@@ -27,5 +28,10 @@ public class ParaPedidosUI extends PedidosUI {
 				cardLayout.show(contentPane, "pedidos");
 			}
 		});
+	}
+	
+	public void mostrarPrincipal() {
+		CardLayout cardLayout = (CardLayout) contentPane.getLayout();
+		cardLayout.show(contentPane, "name_100969206552066");
 	}
 }

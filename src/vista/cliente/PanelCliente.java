@@ -10,20 +10,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
-import javax.swing.JTextField;
-import java.awt.Color;
-import javax.swing.border.SoftBevelBorder;
-
 import control.comportamiento.ParaAltaCliente;
 import control.comportamiento.ParaBajaCliente;
 import control.comportamiento.ParaConsultaCliente;
-
-import javax.swing.border.BevelBorder;
-import javax.swing.JComboBox;
-import javax.swing.SwingConstants;
-import java.awt.BorderLayout;
-import javax.swing.border.EmptyBorder;
-import java.awt.CardLayout;
 
 public class PanelCliente extends JPanel {
 	protected JTabbedPane tabCli;
@@ -33,6 +22,7 @@ public class PanelCliente extends JPanel {
 	protected JPanel consultaCli = new ParaConsultaCliente();
 	protected JPanel bajaCli = new ParaBajaCliente();
 	private JLabel lblIcono;
+	protected JPanel panel;
 
 	/**
 	 * Create the panel.
@@ -46,7 +36,7 @@ public class PanelCliente extends JPanel {
 		gridBagLayout.rowWeights = new double[] { 1.0, Double.MIN_VALUE };
 		setLayout(gridBagLayout);
 
-		JPanel panel = new JPanel();
+		panel = new JPanel();
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 0;

@@ -1,9 +1,13 @@
 package vista;
 
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import control.comportamiento.ParaPanelArticulo;
+import control.comportamiento.ParaPanelCliente;
+import control.comportamiento.ParaPanelPedido;
+
 import java.awt.CardLayout;
 import javax.swing.JButton;
 import java.awt.GridBagLayout;
@@ -15,23 +19,19 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 
-import vista.articulo.PanelArticulo;
-import vista.cliente.PanelCliente;
-import vista.pedido.PanelPedidos;
 import java.awt.Dimension;
-
 
 public class PedidosUI extends JFrame {
 	
-	public JPanel pnlArticulos = new PanelArticulo();
-	public JPanel pnlClientes = new PanelCliente();
-	public JPanel pnlPedidos = new PanelPedidos();
+	public JPanel pnlArticulos = new ParaPanelArticulo();
+	public JPanel pnlClientes = new ParaPanelCliente();
+	public JPanel pnlPedidos = new ParaPanelPedido();
 
 	public JPanel contentPane;
 	protected JButton btnCliente;
 	protected JButton btnArticulo;
 	protected JButton btnPedidos;
-	protected JPanel pnlPrincipal;
+	public JPanel pnlPrincipal;
 
 
 	/**
