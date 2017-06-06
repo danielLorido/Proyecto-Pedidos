@@ -1,14 +1,10 @@
+
 package control.logica;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.HashSet;
-
 import control.adaptador.GestorUnificado;
-import modelo.Articulo;
 import modelo.Cliente;
-import modelo.DAO;
-import utiles.Constantes;
 import utiles.Tipo;
 
 public class GestorCliente {
@@ -21,8 +17,8 @@ public class GestorCliente {
 		else {
 			listaCli = new HashSet<Cliente>();
 		}
-
 	}
+	
 
 	public HashSet<Cliente> getListaCli() {
 		return listaCli;
