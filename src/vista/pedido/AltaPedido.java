@@ -118,7 +118,7 @@ public class AltaPedido extends JPanel {
 		table = new JTable();
 		scrollPane.setViewportView(table);
 
-		String[] columnas = { "NumL�nea", "Art�culo", "Cantidad", "Precio" };
+		String[] columnas = { "NumLinea", "Articulo", "Cantidad", "Precio" };
 		DefaultTableModel modeloTabla = new DefaultTableModel(columnas, 0) {
 			/**
 			 * 
