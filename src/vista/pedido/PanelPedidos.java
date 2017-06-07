@@ -12,13 +12,15 @@ import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
+import control.comportamiento.ParaAltaPedido;
+
 public class PanelPedidos extends JPanel {
 	
 	protected JTextField txtOpcionalesPed;
 	protected JTabbedPane tabPed;
 	protected JButton btnInicioPed;
-	protected JPanel AltaPedido = new AltaPedido();
-	protected JPanel ConsultaPedido = new ConsultaPedido();
+	protected JPanel AltaPedido = new ParaAltaPedido();
+	protected JPanel ConsultaPedido = new ParaConsultaPedido();
 	private JLabel lblIcono;
 
 	/**
