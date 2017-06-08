@@ -20,7 +20,8 @@ public class BajaCliente extends JPanel {
 	protected JTextField txtApellido;
 	protected JTextField txtDireccion;
 	protected JButton btnBaja;
-	private JTextField textField;
+	public JTextField textField;
+	public JComboBox comboBox;
 	/**
 	 * Create the panel.
 	 */
@@ -63,7 +64,7 @@ public class BajaCliente extends JPanel {
 		gbc_lblSeleccion.gridy = 1;
 		pnlBajaCli.add(lblSeleccion, gbc_lblSeleccion);
 		
-		JComboBox comboBox = new JComboBox();
+		comboBox = new JComboBox();
 		GridBagConstraints gbc_comboBox = new GridBagConstraints();
 		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
 		gbc_comboBox.gridwidth = 3;
