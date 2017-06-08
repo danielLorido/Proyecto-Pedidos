@@ -25,11 +25,12 @@ public class AltaPedido extends JPanel {
 	protected JTable table;
 	protected JComboBox<Cliente> comboCliente;
 	protected JLabel lblTotal;
-	protected JComboBox comboArticulo;
-	protected JButton btnNewButton;
-	protected JButton btnEliminar;
+
 	protected JButton btnAnadir;
+	protected JButton btnEliminar;
+	protected JButton btnNewButton;
 	protected JButton btnCancelarPedido;
+	protected JComboBox comboArticulo;
 
 	public AltaPedido() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -64,6 +65,7 @@ public class AltaPedido extends JPanel {
 		add(comboCliente, gbc_comboCliente);
 
 		textId = new JTextField();
+		textId.setEditable(false);
 		GridBagConstraints gbc_textId = new GridBagConstraints();
 		gbc_textId.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textId.insets = new Insets(0, 0, 5, 5);
@@ -72,11 +74,8 @@ public class AltaPedido extends JPanel {
 		add(textId, gbc_textId);
 		textId.setColumns(10);
 		
-		btnAnadir = new JButton("A\u00F1adir linea");
-		btnAnadir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+
+		btnAnadir = new JButton("AÃ±adir linea");
 		
 		JLabel lblSeleccioneUnArticulo = new JLabel("Seleccione un Articulo");
 		GridBagConstraints gbc_lblSeleccioneUnArticulo = new GridBagConstraints();
@@ -120,12 +119,12 @@ public class AltaPedido extends JPanel {
 		table = new JTable();
 		scrollPane.setViewportView(table);
 
-		String[] columnas = { "NumLínea", "Artículo", "Cantidad", "Precio" };
+		String[] columnas = { "NumLinea", "Articulo", "Cantidad", "Precio" };
 		DefaultTableModel modeloTabla = new DefaultTableModel(columnas, 0) {
 			/**
 			 * 
 			 */
-			private static final long serialVersionUID = 1L;
+			protected static final long serialVersionUID = 1L;
 
 			@Override
 			public boolean isCellEditable(int row, int column) {
