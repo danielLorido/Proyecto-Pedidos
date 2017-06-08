@@ -24,6 +24,7 @@ public class BajaArticulo extends JPanel {
 	protected JTextField txtPrecioArt;
 	protected JComboBox comboBoxArt;
 	protected JButton btnDarDeBaja;
+	public JTextArea txtDescripcionArt;
 
 	/**
 	 * Create the panel.
@@ -147,7 +148,7 @@ public class BajaArticulo extends JPanel {
 		gbc_scrollPaneArt.gridy = 6;
 		pnlConsultaArt.add(scrollPaneArt, gbc_scrollPaneArt);
 		
-		JTextArea txtDescripcionArt = new JTextArea();
+		txtDescripcionArt = new JTextArea();
 		txtDescripcionArt.setEditable(false);
 		scrollPaneArt.setViewportView(txtDescripcionArt);
 		
