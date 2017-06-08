@@ -18,13 +18,15 @@ import java.awt.event.ActionEvent;
 
 public class ParaAltaPedido extends AltaPedido {
 	public ParaAltaPedido() {
-		// Lo primero asignar un ID al pedido
-		insertarIdPed();
 		rellenarClientes();
 		rellenarArticulos();
 		// Realizar Pedido
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				Date date = new Date();
+				insertarIdPed(date);
+
 			}
 		});
 
@@ -32,7 +34,6 @@ public class ParaAltaPedido extends AltaPedido {
 		comboArticulo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Articulo arti = (Articulo) comboArticulo.getSelectedItem();
-				
 			}
 
 		});
@@ -47,7 +48,6 @@ public class ParaAltaPedido extends AltaPedido {
 		// Boton anadir linea
 		btnAnadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Anadir una linea de pedido a la tabla
 
 			}
 		});
@@ -61,12 +61,13 @@ public class ParaAltaPedido extends AltaPedido {
 
 	}
 
-	private void insertarIdPed() {
-		// TODO: La fecha se pone al iniciar el programa y no al abrir un nuevo alta
-		Date date = new Date();
+
+	private void insertarIdPed(Date date) {
+		// TODO: La fecha se pone al iniciar el programa y no al abrir un nuevo
+		// alta
 		DateFormat hourdateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
-		String fecha = hourdateFormat.toString();
-		textId.setText(fecha);
+		textId.setText(hourdateFormat.format(date));
+
 	}
 
 	private void rellenarArticulos() {
@@ -85,7 +86,9 @@ public class ParaAltaPedido extends AltaPedido {
 
 		HashSet<Cliente> clientes = new GestorCliente().getListaCli();
 
-		for (Cliente cliente: clientes) {
+
+		for (Cliente cliente : clientes) {
+
 			modelo.addElement(cliente);
 		}
 		comboCliente.setModel(modelo);

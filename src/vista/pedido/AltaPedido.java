@@ -25,6 +25,7 @@ public class AltaPedido extends JPanel {
 	protected JTable table;
 	protected JComboBox<Cliente> comboCliente;
 	protected JLabel lblTotal;
+
 	protected JButton btnAnadir;
 	protected JButton btnEliminar;
 	protected JButton btnNewButton;
@@ -73,8 +74,8 @@ public class AltaPedido extends JPanel {
 		add(textId, gbc_textId);
 		textId.setColumns(10);
 		
-		btnAnadir = new JButton("Añadir linea");
 
+		btnAnadir = new JButton("Añadir linea");
 		
 		JLabel lblSeleccioneUnArticulo = new JLabel("Seleccione un Articulo");
 		GridBagConstraints gbc_lblSeleccioneUnArticulo = new GridBagConstraints();
