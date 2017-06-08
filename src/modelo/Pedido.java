@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.HashSet;
 
 public class Pedido implements Serializable {
-
 	private Date fechaPedido;
 	private Cliente cliente;
 	private HashSet<LineaPedido> listaArticulos;

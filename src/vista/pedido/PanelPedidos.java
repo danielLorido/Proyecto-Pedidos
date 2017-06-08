@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 
 import control.comportamiento.ParaAltaPedido;
 
+
 public class PanelPedidos extends JPanel {
 	
 	protected JTextField txtOpcionalesPed;

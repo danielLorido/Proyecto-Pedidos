@@ -51,7 +51,13 @@ public class Cliente implements Serializable {
 
 	@Override
 	public String toString() {
-		return "["+ dni + "] " + nombre;
+		return "[" + dni + "] " + nombre;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return this.dni.equals(((Cliente)obj).dni) && this.nombre.equals(((Cliente)obj).nombre) && this.apellido.equals(((Cliente)obj).apellido) &&
+				this.direccion.equals(((Cliente)obj).direccion);
 	}
 
 }

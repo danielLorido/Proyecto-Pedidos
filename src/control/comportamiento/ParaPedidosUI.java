@@ -29,9 +29,8 @@ public class ParaPedidosUI extends PedidosUI {
 			}
 		});
 	}
-	
 	public void mostrarPrincipal() {
 		CardLayout cardLayout = (CardLayout) contentPane.getLayout();
-		cardLayout.show(contentPane, "name_100969206552066");
+		cardLayout.show(pnlPrincipal, "name_100969206552066");
 	}
 }

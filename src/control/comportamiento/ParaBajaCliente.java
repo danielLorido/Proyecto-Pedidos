@@ -2,7 +2,7 @@ package control.comportamiento;
 
 import vista.cliente.BajaCliente;
 import java.awt.event.ActionListener;
-
+import java.io.File;
 import java.util.HashSet;
 
 import javax.swing.DefaultComboBoxModel;
@@ -41,6 +41,7 @@ public class ParaBajaCliente extends BajaCliente {
 			public void actionPerformed(ActionEvent e) {
 				// Dar de baja
 				if (new GestorUnificado(Tipo.cliente).borra(clienteBaja)) {
+					
 					textField.setText("Cliente dado de baja correctamente");
 				} else {
 					textField.setText("Error al dar de baja al Cliente, verifique los datos.");
@@ -57,6 +58,7 @@ public class ParaBajaCliente extends BajaCliente {
 			modelo.addElement(cliente);
 		}
 		comboBox.setModel(modelo);
+	}
 
 	public boolean bajaCliente(String dni, Tipo tipo) {
 		GestorUnificado buscar = new GestorUnificado(tipo);

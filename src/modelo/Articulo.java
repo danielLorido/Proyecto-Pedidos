@@ -54,4 +54,9 @@ public class Articulo implements Serializable {
 		return nombre;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		return this.numReferencia == ((Articulo) obj).numReferencia && this.nombre.equals(((Articulo) obj).nombre)
+				&& this.descripcion.equals(((Articulo) obj).descripcion) && this.precio == ((Articulo) obj).precio;
+	}
 }
