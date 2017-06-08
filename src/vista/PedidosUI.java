@@ -51,18 +51,18 @@ public class PedidosUI extends JFrame {
 		pnlPrincipal = new JPanel();
 		contentPane.add(pnlPrincipal, "name_100969206552066");
 		GridBagLayout gbl_pnlPrincipal = new GridBagLayout();
-		gbl_pnlPrincipal.columnWidths = new int[]{45, 0, 0, 0};
+		gbl_pnlPrincipal.columnWidths = new int[]{0, 45, 0, 0, 0, 0, 0, 0};
 		gbl_pnlPrincipal.rowHeights = new int[]{30, 14, 0, 0};
-		gbl_pnlPrincipal.columnWeights = new double[]{1.0, 1.0, 1.0, Double.MIN_VALUE};
+		gbl_pnlPrincipal.columnWeights = new double[]{1.0, 4.0, 1.0, 4.0, 1.0, 4.0, 1.0, Double.MIN_VALUE};
 		gbl_pnlPrincipal.rowWeights = new double[]{1.0, 1.0, 1.0, Double.MIN_VALUE};
 		pnlPrincipal.setLayout(gbl_pnlPrincipal);
 		
 		JLabel lblProyectoPedidos = new JLabel("Proyecto Pedidos");
 		GridBagConstraints gbc_lblProyectoPedidos = new GridBagConstraints();
 		gbc_lblProyectoPedidos.fill = GridBagConstraints.BOTH;
-		gbc_lblProyectoPedidos.gridwidth = 3;
-		gbc_lblProyectoPedidos.insets = new Insets(0, 0, 5, 0);
-		gbc_lblProyectoPedidos.gridx = 0;
+		gbc_lblProyectoPedidos.gridwidth = 5;
+		gbc_lblProyectoPedidos.insets = new Insets(0, 0, 5, 5);
+		gbc_lblProyectoPedidos.gridx = 1;
 		gbc_lblProyectoPedidos.gridy = 0;
 		pnlPrincipal.add(lblProyectoPedidos, gbc_lblProyectoPedidos);
 		lblProyectoPedidos.setHorizontalAlignment(SwingConstants.CENTER);
@@ -72,7 +72,7 @@ public class PedidosUI extends JFrame {
 		GridBagConstraints gbc_btnCliente = new GridBagConstraints();
 		gbc_btnCliente.fill = GridBagConstraints.BOTH;
 		gbc_btnCliente.insets = new Insets(0, 0, 5, 5);
-		gbc_btnCliente.gridx = 0;
+		gbc_btnCliente.gridx = 1;
 		gbc_btnCliente.gridy = 1;
 		pnlPrincipal.add(btnCliente, gbc_btnCliente);
 		
@@ -80,24 +80,25 @@ public class PedidosUI extends JFrame {
 		GridBagConstraints gbc_btnArticulo = new GridBagConstraints();
 		gbc_btnArticulo.fill = GridBagConstraints.BOTH;
 		gbc_btnArticulo.insets = new Insets(0, 0, 5, 5);
-		gbc_btnArticulo.gridx = 1;
+		gbc_btnArticulo.gridx = 3;
 		gbc_btnArticulo.gridy = 1;
 		pnlPrincipal.add(btnArticulo, gbc_btnArticulo);
 		
 		btnPedidos = new JButton("Pedidos");
 		GridBagConstraints gbc_btnPedidos = new GridBagConstraints();
 		gbc_btnPedidos.fill = GridBagConstraints.BOTH;
-		gbc_btnPedidos.insets = new Insets(0, 0, 5, 0);
-		gbc_btnPedidos.gridx = 2;
+		gbc_btnPedidos.insets = new Insets(0, 0, 5, 5);
+		gbc_btnPedidos.gridx = 5;
 		gbc_btnPedidos.gridy = 1;
 		pnlPrincipal.add(btnPedidos, gbc_btnPedidos);
 		
 		JLabel label = new JLabel("Desarrolladores: Albano, Daniel e Ismael");
 		label.setHorizontalAlignment(SwingConstants.LEFT);
 		GridBagConstraints gbc_label = new GridBagConstraints();
+		gbc_label.insets = new Insets(0, 0, 0, 5);
 		gbc_label.anchor = GridBagConstraints.SOUTHWEST;
-		gbc_label.gridwidth = 3;
-		gbc_label.gridx = 0;
+		gbc_label.gridwidth = 5;
+		gbc_label.gridx = 1;
 		gbc_label.gridy = 2;
 		pnlPrincipal.add(label, gbc_label);
 		

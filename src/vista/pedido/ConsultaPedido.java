@@ -20,7 +20,7 @@ public class ConsultaPedido extends JPanel {
 	protected JTextField textId;
 	protected JTextField textCliente;
 	protected JTable table;
-	protected JLabel lblTotal;
+	private JTextField txtTotal;
 
 	/**
 	 * Create the panel.
@@ -30,8 +30,16 @@ public class ConsultaPedido extends JPanel {
 		gridBagLayout.columnWidths = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
 		gridBagLayout.rowHeights = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 		gridBagLayout.columnWeights = new double[] { 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE };
-		gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE };
+		gridBagLayout.rowWeights = new double[] { 0.0, 1.0, 1.0, 1.0, 0.0, 2.0, 1.0, 0.0, Double.MIN_VALUE };
 		setLayout(gridBagLayout);
+		
+		JLabel lblConsultaPedidos = new JLabel("Consulta Pedidos");
+		GridBagConstraints gbc_lblConsultaPedidos = new GridBagConstraints();
+		gbc_lblConsultaPedidos.gridwidth = 7;
+		gbc_lblConsultaPedidos.insets = new Insets(0, 0, 5, 5);
+		gbc_lblConsultaPedidos.gridx = 0;
+		gbc_lblConsultaPedidos.gridy = 0;
+		add(lblConsultaPedidos, gbc_lblConsultaPedidos);
 
 		JLabel lblSeleccionePedido = new JLabel("Seleccione pedido");
 		GridBagConstraints gbc_lblSeleccionePedido = new GridBagConstraints();
@@ -49,13 +57,6 @@ public class ConsultaPedido extends JPanel {
 		gbc_comboPedido.gridx = 2;
 		gbc_comboPedido.gridy = 2;
 		add(comboPedido, gbc_comboPedido);
-		
-		JLabel lblIcono = new JLabel("ICON");
-		GridBagConstraints gbc_lblIcono = new GridBagConstraints();
-		gbc_lblIcono.insets = new Insets(0, 0, 5, 5);
-		gbc_lblIcono.gridx = 4;
-		gbc_lblIcono.gridy = 2;
-		add(lblIcono, gbc_lblIcono);
 		
 		JLabel lblIdpedido = new JLabel("IdPedido");
 		GridBagConstraints gbc_lblIdpedido = new GridBagConstraints();
@@ -106,7 +107,7 @@ public class ConsultaPedido extends JPanel {
 		table = new JTable();
 		scrollPane.setViewportView(table);
 		
-		String[] columnas = { "NumLínea", "Artículo", "Cantidad", "Precio" };
+		String[] columnas = { "NumLï¿½nea", "Artï¿½culo", "Cantidad", "Precio" };
 		DefaultTableModel modeloTabla = new DefaultTableModel(columnas, 0) {
 			/**
 			 * 
@@ -121,20 +122,24 @@ public class ConsultaPedido extends JPanel {
 		};
 		table.setModel(modeloTabla);
 		
-		JLabel lbl = new JLabel("Total");
-		lbl.setFont(new Font("Tahoma", Font.BOLD, 14));
-		GridBagConstraints gbc_lbl = new GridBagConstraints();
-		gbc_lbl.insets = new Insets(0, 0, 5, 5);
-		gbc_lbl.gridx = 4;
-		gbc_lbl.gridy = 6;
-		add(lbl, gbc_lbl);
-		
-		lblTotal = new JLabel("");
+		JLabel lblTotal = new JLabel("Total");
+		lblTotal.setFont(new Font("Tahoma", Font.BOLD, 14));
 		GridBagConstraints gbc_lblTotal = new GridBagConstraints();
+		gbc_lblTotal.anchor = GridBagConstraints.EAST;
 		gbc_lblTotal.insets = new Insets(0, 0, 5, 5);
-		gbc_lblTotal.gridx = 5;
+		gbc_lblTotal.gridx = 4;
 		gbc_lblTotal.gridy = 6;
 		add(lblTotal, gbc_lblTotal);
+		
+		txtTotal = new JTextField();
+		txtTotal.setEditable(false);
+		GridBagConstraints gbc_txtTotal = new GridBagConstraints();
+		gbc_txtTotal.insets = new Insets(0, 0, 5, 5);
+		gbc_txtTotal.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtTotal.gridx = 5;
+		gbc_txtTotal.gridy = 6;
+		add(txtTotal, gbc_txtTotal);
+		txtTotal.setColumns(10);
 
 	}
 

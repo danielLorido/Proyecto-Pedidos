@@ -2,9 +2,11 @@ package control.comportamiento;
 
 import vista.cliente.BajaCliente;
 import java.awt.event.ActionListener;
+
 import java.util.HashSet;
 
 import javax.swing.DefaultComboBoxModel;
+
 
 import control.adaptador.GestorUnificado;
 import control.logica.Gestor;
@@ -43,19 +45,27 @@ public class ParaBajaCliente extends BajaCliente {
 				} else {
 					textField.setText("Error al dar de baja al Cliente, verifique los datos.");
 				}
+
 			}
 		});
 	}
 
 	private void rellenarCombo() {
 		DefaultComboBoxModel<Cliente> modelo = new DefaultComboBoxModel<Cliente>();
-
 		HashSet<Cliente> clientes = new GestorCliente().getListaCli();
-
 		for (Cliente cliente : clientes) {
 			modelo.addElement(cliente);
 		}
 		comboBox.setModel(modelo);
+
+	public boolean bajaCliente(String dni, Tipo tipo) {
+		GestorUnificado buscar = new GestorUnificado(tipo);
+		Cliente cliente = null;
+		File file = new File(tipo.getRuta());
+		if (file.exists()) {
+			cliente = (Cliente) buscar.obtener();
+		}
+		return buscar.borra(cliente);
 	}
 
 }

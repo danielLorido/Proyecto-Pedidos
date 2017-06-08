@@ -58,7 +58,7 @@ public class PanelArticulo extends JPanel {
 		gbc_btnInicioArt.gridy = 0;
 		panel.add(btnInicioArt, gbc_btnInicioArt);
 
-		JLabel lblSecArt = new JLabel("SECCI�N ART�CULOS");
+		JLabel lblSecArt = new JLabel("SECCION ARTICULOS");
 		GridBagConstraints gbc_lblSecArt = new GridBagConstraints();
 		gbc_lblSecArt.anchor = GridBagConstraints.SOUTH;
 		gbc_lblSecArt.insets = new Insets(0, 0, 5, 5);
