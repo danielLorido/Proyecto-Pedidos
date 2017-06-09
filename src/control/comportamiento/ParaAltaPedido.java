@@ -4,7 +4,6 @@ import vista.pedido.AltaPedido;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 
@@ -12,13 +11,14 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import control.adaptador.GestorUnificado;
 import control.logica.GestorAltaArticulo;
 import control.logica.GestorCliente;
-import control.logica.GestorPedidos;
 import modelo.Articulo;
-import modelo.Cliente;
+ import modelo.Cliente;
 import modelo.LineaPedido;
 import modelo.Pedido;
+import utiles.Tipo;
 
 import java.awt.event.ActionEvent;
 
@@ -34,7 +34,7 @@ public class ParaAltaPedido extends AltaPedido {
 		rellenarArticulos();
 		tabla();
 		// Realizar Pedido
-		
+
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Date date = new Date();
@@ -52,12 +52,10 @@ public class ParaAltaPedido extends AltaPedido {
 
 					LineaPedido lin = new LineaPedido(num, cantidad, precio, arti);
 					lineas.add(lin);
-
-					// TODO falla cuando se mete más de una línea de pedido y
-					// cuando se realizan varios pedidos, es muy tarde, ya se mira el viernes xD
-					Pedido ped = new Pedido(date, cli, lineas, 42);
-					new GestorPedidos().escribirObjeto(ped);
 				}
+				//TODO calcular el total(articulo * cantidad)
+				Pedido ped = new Pedido(date, cli, lineas, 42);
+				new GestorUnificado(Tipo.pedido).escribir(ped);
 
 			}
 		});
@@ -154,7 +152,6 @@ public class ParaAltaPedido extends AltaPedido {
 
 			@Override
 			public boolean isCellEditable(int row, int column) {
-				// TODO Auto-generated method stub
 				return false;
 			}
 		};
