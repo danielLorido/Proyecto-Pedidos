@@ -34,6 +34,7 @@ public class ParaAltaPedido extends AltaPedido {
 		rellenarArticulos();
 		tabla();
 		// Realizar Pedido
+		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Date date = new Date();

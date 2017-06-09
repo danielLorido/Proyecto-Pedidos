@@ -33,6 +33,7 @@ public class AltaPedido extends JPanel {
 	protected JTextField txtCantidad;
 	protected JTextField txtTotal;
 
+	
 	public AltaPedido() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 0, 0, 0, 0, 0, 46, 0, 0, 0 };

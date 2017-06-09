@@ -16,6 +16,7 @@ public class LineaPedido implements Serializable {
 		this.precioLinea = precioLinea;
 		this.articulo = articulo;
 	}
+	
 
 	public int getNumLinea() {
 		return numLinea;
