@@ -146,21 +146,6 @@ public class AltaPedido extends JPanel {
 		table = new JTable();
 		scrollPane.setViewportView(table);
 
-		String[] columnas = { "NumLinea", "Articulo", "Cantidad", "Precio" };
-		DefaultTableModel modeloTabla = new DefaultTableModel(columnas, 0) {
-			/**
-			 * 
-			 */
-			protected static final long serialVersionUID = 1L;
-
-			@Override
-			public boolean isCellEditable(int row, int column) {
-				// TODO Auto-generated method stub
-				return false;
-			}
-		};
-		table.setModel(modeloTabla);
-
 		btnNewButton = new JButton("Realizar Pedido");
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.fill = GridBagConstraints.HORIZONTAL;
