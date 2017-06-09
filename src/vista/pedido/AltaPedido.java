@@ -33,6 +33,7 @@ public class AltaPedido extends JPanel {
 	protected JTextField txtCantidad;
 	protected JTextField txtTotal;
 
+	
 	public AltaPedido() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 0, 0, 0, 0, 0, 46, 0, 0, 0 };
@@ -145,21 +146,6 @@ public class AltaPedido extends JPanel {
 
 		table = new JTable();
 		scrollPane.setViewportView(table);
-
-		String[] columnas = { "NumLinea", "Articulo", "Cantidad", "Precio" };
-		DefaultTableModel modeloTabla = new DefaultTableModel(columnas, 0) {
-			/**
-			 * 
-			 */
-			protected static final long serialVersionUID = 1L;
-
-			@Override
-			public boolean isCellEditable(int row, int column) {
-				// TODO Auto-generated method stub
-				return false;
-			}
-		};
-		table.setModel(modeloTabla);
 
 		btnNewButton = new JButton("Realizar Pedido");
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
