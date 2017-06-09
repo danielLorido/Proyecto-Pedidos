@@ -38,13 +38,11 @@ public class ParaAltaArticulo extends AltaArticulo {
 					if (comprobarAlfabetico(nombre) && nombre.length() > 2) {
 						if (comprobarNumerico(precio)) {
 							if (comprobarAlfabetico(descripcion) && descripcion.length() > 5) {
-								
-								
+
 								Articulo miArticulo = new Articulo(Integer.valueOf(numRef), nombre, descripcion,
 										Float.valueOf(precio));
 								new GestorAltaArticulo().escribeObjeto(miArticulo);
-								
-								
+
 								textAnomalia.setForeground(Color.green);
 								textAnomalia.setText("Articulo creado correctamente");
 							} else {
@@ -87,7 +85,7 @@ public class ParaAltaArticulo extends AltaArticulo {
 	 */
 	private boolean comprobarAlfabetico(String texto) {
 		for (int j = 0; j < texto.length(); j++) {
-			if (Character.isAlphabetic(texto.charAt(j)) || texto.charAt(j) == ' ') {
+			if (Character.isAlphabetic(texto.charAt(j)) || texto.charAt(j) == ' ' || texto.charAt(j) == '\n') {
 				ok = true;
 			} else {
 				return false;

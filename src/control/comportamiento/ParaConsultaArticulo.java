@@ -28,15 +28,15 @@ public class ParaConsultaArticulo extends ConsultaArticulo {
 				txtNombreArt.setText(art.getNombre());
 				txtNumRef.setText(String.valueOf(art.getNumReferencia()));
 				txtDescripcionArt.setText(art.getDescripcion());
+				
+				
 			}
 		});
-
 	}
 
 	private void rellenarCombo() {
 
 		DefaultComboBoxModel<Articulo> modelo = new DefaultComboBoxModel<Articulo>();
-
 		HashSet<Articulo> articulos = new GestorAltaArticulo().getListaArt();
 
 		for (Articulo articulo : articulos) {

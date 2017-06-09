@@ -13,6 +13,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
 import control.comportamiento.ParaAltaPedido;
+import control.comportamiento.ParaConsultaPedido;
 
 
 public class PanelPedidos extends JPanel {

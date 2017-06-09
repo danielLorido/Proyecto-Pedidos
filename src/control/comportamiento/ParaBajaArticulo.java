@@ -18,12 +18,11 @@ public class ParaBajaArticulo extends BajaArticulo {
 	int posicionArticulo;
 
 	public ParaBajaArticulo() {
+		
 		rellenarCombo();
+		
 		comboBoxArt.addActionListener(new ActionListener() {
-
-			@Override
 			public void actionPerformed(ActionEvent e) {
-				// Obtengo el cliente a partir del combo, muestro su informacion
 				articuloBaja = (Articulo) comboBoxArt.getSelectedItem();
 				textField.setText(Integer.toString(articuloBaja.getNumReferencia()));
 				txtNombreArt.setText(articuloBaja.getNombre());
@@ -31,14 +30,20 @@ public class ParaBajaArticulo extends BajaArticulo {
 				txtDescripcionArt.setText(articuloBaja.getDescripcion());
 			}
 		});
+	
+	
+		
+		
 		btnDarDeBaja.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// Dar de baja
-				if (new GestorUnificado(Tipo.cliente).borra(articuloBaja)) {
-					textField.setText("Articulo dado de baja correctamente");
-				} else {
-					textField.setText("Error al dar de baja al Articulo, verifique los datos.");
-				}
+				articuloBaja = (Articulo) comboBoxArt.getSelectedItem();
+				new GestorUnificado(Tipo.articulo).borra(articuloBaja);
+//				if (new GestorUnificado(Tipo.cliente).borra(articuloBaja)) {
+//					textField.setText("Articulo dado de baja correctamente");
+//				} else {
+//					textField.setText("Error al dar de baja al Articulo, verifique los datos.");
+//				}
 			}
 		});
 	}

@@ -60,9 +60,12 @@ public class Pedido implements Serializable {
 	public void setPrecioTotal(float precioTotal) {
 		this.precioTotal = precioTotal;
 	}
+
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "Pedido [fechaPedido=" + fechaPedido + "]";
 	}
+	
+	
+	
 }

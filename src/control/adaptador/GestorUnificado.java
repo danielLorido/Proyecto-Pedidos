@@ -1,5 +1,6 @@
 package control.adaptador;
 
+import modelo.Articulo;
 import modelo.DAO;
 import utiles.Tipo;
 
@@ -58,4 +59,7 @@ public class GestorUnificado {
 		return comparador.equals(obj);
 	}
 
+	private boolean compararArt(Articulo comparador, Articulo art) {
+		return comparador.getNombre().equals(art.getNombre());
+	}
 }

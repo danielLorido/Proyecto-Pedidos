@@ -27,7 +27,7 @@ public class ParaAltaPedido extends AltaPedido {
 	private Articulo arti;
 	private int lineaPedidoActual = 0;
 	DefaultTableModel modeloTabla;
-	Object[] fila;
+//	Object[] fila;
 
 	public ParaAltaPedido() {
 		rellenarClientes();
