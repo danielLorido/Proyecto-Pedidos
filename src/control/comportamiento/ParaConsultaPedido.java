@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
@@ -20,7 +21,6 @@ import java.awt.event.ActionEvent;
 
 public class ParaConsultaPedido extends ConsultaPedido {
 
-	Pedido pedidos;
 	DefaultTableModel modeloTabla;
 	// Object[] fila;
 
@@ -28,56 +28,44 @@ public class ParaConsultaPedido extends ConsultaPedido {
 
 		rellenarCombo();
 		tabla();
-		
-//		Articulo art = (Articulo) comboArt.getSelectedItem();
-//		txtPrecioArt.setText(String.valueOf(art.getPrecio()));
-//		txtNombreArt.setText(art.getNombre());
-//		txtNumRef.setText(String.valueOf(art.getNumReferencia()));
-//		txtDescripcionArt.setText(art.getDescripcion());
 
 		comboPedido.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				modeloTabla.setRowCount(0);
 				Pedido ped = (Pedido) comboPedido.getSelectedItem();
-				
+
 				HashSet<LineaPedido> linea = ped.getListaArticulos();
 				ArrayList<LineaPedido> loreal = new ArrayList<LineaPedido>(linea);
+
 				
 				textCliente.setText(String.valueOf(ped.getCliente()));
 				textId.setText(String.valueOf(ped.getFechaPedido()));
+
 				
-//				Object[] fila = { dameLinea(), arti.getNombre(), 1, arti.getPrecio() };
-				
-				for (int i = 0; i < linea.size(); i++) {
-					
-					Object[] fila = {};
+				//TODO no muestra correctamente los datos de los articulos
+
+				for (int i = 0; i < loreal.size(); i++) {
+					LineaPedido lin = loreal.get(i);
+					Object[] fila = {lin.getArticulo().getDescripcion(), lin.getArticulo().getNombre(), lin.getCantidad(),lin.getPrecioLinea()};
 					modeloTabla.addRow(fila);
 				}
-				
-				
-				
 			}
 		});
 		// TODO Auto-generated constructor stub
 	}
 
+	@SuppressWarnings("unchecked")
 	private void rellenarCombo() {
 
-		// File file = new File("pedidos.dat");
 		DefaultComboBoxModel<Pedido> modelo = new DefaultComboBoxModel<Pedido>();
 		HashSet<Pedido> linea = new HashSet<>();
-		// if (file.exists()) {
-		// while (gestor.obtener() != null) {
-		// for (int i = 0; i < 2; i++) {
-		pedidos = (Pedido) new GestorUnificado(Tipo.pedido).obtener();
-		linea.add(pedidos);
-		// }
 
-		// }
+		linea = (HashSet<Pedido>) new GestorUnificado(Tipo.pedido).obtener();
+
 		for (Pedido pedido : linea) {
-			modelo.addElement(pedidos);
+			modelo.addElement(pedido);
 		}
 		comboPedido.setModel(modelo);
-		// }
 	}
 
 	public void tabla() {

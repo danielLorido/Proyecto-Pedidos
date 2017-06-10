@@ -15,7 +15,7 @@ import control.adaptador.GestorUnificado;
 import control.logica.GestorAltaArticulo;
 import control.logica.GestorCliente;
 import modelo.Articulo;
- import modelo.Cliente;
+import modelo.Cliente;
 import modelo.LineaPedido;
 import modelo.Pedido;
 import utiles.Tipo;
@@ -27,7 +27,7 @@ public class ParaAltaPedido extends AltaPedido {
 	private Articulo arti;
 	private int lineaPedidoActual = 0;
 	DefaultTableModel modeloTabla;
-//	Object[] fila;
+	// Object[] fila;
 
 	public ParaAltaPedido() {
 		rellenarClientes();
@@ -49,14 +49,12 @@ public class ParaAltaPedido extends AltaPedido {
 					int num = (int) modeloTabla.getValueAt(i, 0);
 					int cantidad = (int) modeloTabla.getValueAt(i, 2);
 					float precio = (float) modeloTabla.getValueAt(i, 3);
-
 					LineaPedido lin = new LineaPedido(num, cantidad, precio, arti);
 					lineas.add(lin);
 				}
-				//TODO calcular el total(articulo * cantidad)
-				Pedido ped = new Pedido(date, cli, lineas, 42);
+				// TODO calcular el total(articulo * cantidad)
+				Pedido ped = new Pedido(date, cli, lineas, 42/*WWWWWWWWWWWWwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwWWWAT*/);
 				new GestorUnificado(Tipo.pedido).escribir(ped);
-
 			}
 		});
 
@@ -66,26 +64,24 @@ public class ParaAltaPedido extends AltaPedido {
 
 				arti = (Articulo) comboArticulo.getSelectedItem();
 
+				// TODO
 				boolean encontrado = false;
-
+				int cantidad = 1;
 				for (int i = 0; i < modeloTabla.getRowCount(); i++) {
 					String nom = String.valueOf(modeloTabla.getValueAt(i, 1));
 					if (arti.getNombre().equals(nom)) {
-						int cantidad = (int) modeloTabla.getValueAt(i, 2);
+						cantidad = (int) modeloTabla.getValueAt(i, 2);
 						modeloTabla.setValueAt(cantidad + 1, i, 2);
+						//TODO lo del precio y tal
+//						 txtTotal.setText(String.valueOf(calcularPrecioLinea(cantidad)));
 						encontrado = true;
 						break;
 					}
 				}
-
 				if (!encontrado) {
-					Object[] fila = { dameLinea(), arti.getNombre(), 1, arti.getPrecio() };
+					Object[] fila = { arti.getNumReferencia(), arti.getNombre(), cantidad, arti.getPrecio() };
 					modeloTabla.addRow(fila);
 				}
-			}
-
-			private float calcularPrecioLinea() {
-				return arti.getPrecio() * Integer.valueOf(txtCantidad.getText());
 			}
 
 		});
@@ -103,6 +99,10 @@ public class ParaAltaPedido extends AltaPedido {
 	private int dameLinea() {
 		lineaPedidoActual++;
 		return lineaPedidoActual;
+	}
+
+	private float calcularPrecioLinea(int cant) {
+		return (arti.getPrecio() * cant);
 	}
 
 	/**

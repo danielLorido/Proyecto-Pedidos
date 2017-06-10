@@ -1,5 +1,6 @@
 package modelo;
 
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,6 +9,11 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 import control.adaptador.GestorUnificado;
 import utiles.Constantes;
@@ -72,25 +78,48 @@ public class DAO {
 	public Object leer(String path, boolean unico) {
 		File archivo = new File(path);
 		Object socio = null;
+		HashSet<Object> lista = new HashSet<>();
 		try {
 			// este es el if que controla si el flujo debe abrirse o no
 			if (unico || adaptadorLectura == null) {
 				FileInputStream flujoEntrada = new FileInputStream(archivo);
 				adaptadorLectura = new ObjectInputStream(flujoEntrada);
 			}
-			socio = adaptadorLectura.readObject();
+
+			if (!unico) {
+				while (true) {
+					try {
+						socio = adaptadorLectura.readObject();
+						if (socio != null) {
+							lista.add(socio);
+						}
+					} catch (EOFException ex1) {
+						break; // EOF reached.
+					} catch (IOException ex2) {
+						System.err.println("An IOException was caught: " + ex2.getMessage());
+						ex2.printStackTrace();
+					}
+				}
+			} else {
+				socio = adaptadorLectura.readObject();
+			}
+
 			// este controla si debe cerrarse o no
 			if (unico)
+				// adaptadorLectura.read();
 				adaptadorLectura.close();
 			else {
-				// si tras una operacion de lectura el resultado ha sido null
+				// si tras una operacion de lectura el resultado ha sido
+				// null
 				// implica ue el flujo ha llegado al final del fichero
-				if (socio == null) {
+
 					adaptadorLectura.close();
-				}
 			}
 
 		} catch (FileNotFoundException e) {
+			if (Constantes.errores)
+				e.printStackTrace();
+		} catch (EOFException e) {
 			if (Constantes.errores)
 				e.printStackTrace();
 		} catch (IOException e) {
@@ -100,7 +129,11 @@ public class DAO {
 			if (Constantes.errores)
 				e.printStackTrace();
 		}
-		return socio;
+		if (unico) {
+			return socio;
+		} else {
+			return lista;
+		}
 	}
 
 	/**
